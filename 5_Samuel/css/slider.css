@@ -1,0 +1,58 @@
+.music-toggle {
+  display: flex; /* Container wird als Flexbox dargestellt */
+  align-items: center; /* Vertikale Zentrierung der Elemente */
+  gap: 10px; /* Abstand zwischen Text und Slider */
+  font-size: 18px; /* Schriftgröße des Textes */
+  color: #ffffff; /* Textfarbe */
+  position: fixed; /* Immer an der gleichen Position auf der Seite */
+  top: 20px; /* Abstand vom oberen Rand */
+  right: 20px; /* Abstand vom rechten Rand */
+  z-index: 1; /* Über anderen Inhalten */
+}
+
+.switch {
+  position: relative; /* Ermöglicht Positionierung der Slider-Pseudoelemente */
+  display: inline-block; /* Blockähnlich für Inline-Darstellung */
+  width: 60px; /* Breite des Sliders */
+  height: 34px; /* Höhe des Sliders */
+}
+
+.switch input {
+  opacity: 0; /* Versteckt das tatsächliche Checkbox-Element */
+  width: 0; /* Keine Breite */
+  height: 0; /* Keine Höhe */
+}
+
+.slider {
+  position: absolute; /* Absolut innerhalb der Switch-Box */
+  cursor: pointer; /* Zeiger-Cursor beim Hover */
+  background: rgba(255, 255, 255, 0.3); /* halbtransparentes Weiß */
+  backdrop-filter: blur(10px); /* milchiger Effekt */
+  border-radius: 34px; /* Runde Enden des Sliders */
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; /* Slider füllt die Switch-Box komplett aus */
+  transition: 0.4s; /* Sanfte Animation beim Wechsel */
+}
+
+.slider::before {
+  position: absolute; /* Absolut innerhalb des Sliders */
+  content: ""; /* Pseudoelement muss Inhalt haben */
+  height: 26px; /* Größe des beweglichen Knopfes */
+  width: 26px; 
+  left: 4px; /* Startposition links */
+  bottom: 4px; /* Abstand zum unteren Rand */
+  background-color: #ffffff; /* Farbe des Knopfes */
+  border-radius: 50%; /* Rundes Pseudoelement */
+  transition: 0.4s; /* Sanfte Bewegung beim Wechsel */
+}
+
+/* Wenn aktiviert */
+input:checked + .slider {
+  background-color:#fdd116; /* Hintergrundfarbe des Sliders, wenn aktiv */
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px); /* Bewegt den runden Knopf nach rechts, wenn aktiv */
+}

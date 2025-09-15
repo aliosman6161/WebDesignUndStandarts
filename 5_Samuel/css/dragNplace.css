@@ -1,0 +1,58 @@
+.objects {
+    background: rgba(255, 255, 255, 0.3); /* halbtransparentes Weiß */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* leichter Rahmen */
+    backdrop-filter: blur(10px); /* milchiger Effekt */
+    border-radius: 15px;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow-y: auto; /* falls viele Icons */
+    margin-bottom: 10px;;
+}
+
+.objects-raster{
+    border-radius: 15px;
+    box-sizing: border-box;
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+    place-items: center;
+    max-height: 100%;
+}
+
+.draggable {
+    width: 45px;
+    height: 45px;
+    padding: 5px;
+    cursor: grab;
+}
+
+.placed-object {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    cursor: grab;
+    user-select: none;
+}
+
+#resetButton {
+    margin-top: auto; /* Schiebt den Button ganz nach unten */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.3); /* halbtransparentes Weiß */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* leichter Rahmen */
+    backdrop-filter: blur(10px); /* milchiger Effekt */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    width: 80%;
+    max-width: 150px;
+}
+
+#resetButton:hover {
+    transform: scale(1.1);
+    background-color: #cf0000;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8" />
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link href="css/home.css" rel="stylesheet" type="text/css" />
+        <link href="css/slider.css" rel="stylesheet" type="text/css">
+        <title>
+            Home
+        </title>
+    </head>
+
+    <body>
+        <nav class="navbar">
+            <a href='index.html' class="active">Home</a>
+            <a href="aufstellung.html">Aufstellung</a>
+            <a href="technik.html">Technik</a>
+            <a href='taktikBoard.html'>Taktik Planer</a>
+        </nav>
+        <div class="music-toggle">
+            <span>Hintergrundmusik</span>
+            <label class="switch">
+                <input type="checkbox" id="musicSwitch">
+                <span class="slider"></span>
+            </label>
+            <audio id="bgMusic" loop muted>
+                <source src="audio/Mein-Song.mp3" type="audio/mpeg">
+                Dein Browser unterstützt kein Audio.
+            </audio>
+        </div>
+        <div class="page">
+            <div class="container">
+                <div class="center-text">
+                    <h1>Willkommen zum Volleyball</h1>
+                    <p>Ob Neuling oder Profi, du hast Fragen zur Aufstellung,
+                        der Technik oder möchtest mit deinem
+                        Team Taktiken erstellen und besprechen? Dann bist du
+                        hier genau richtig.</p>
+                </div>
+                <div class="rechteck rechteck1"></div>
+                <div class="rechteck rechteck2"></div>
+                <div class="rechteck rechteck3"></div>
+                <div class="rechteck rechteck4"></div>
+                <div class="rechteck rechteck5"></div>
+                <div class="rechteck rechteck6"></div>
+                <div class="rechteck rechteck7"></div>
+                <div class="rechteck rechteck8"></div>
+                <div class="rechteck rechteck9"></div>
+                <div class="rechteck rechteck10"></div>
+                <div class="rechteck rechteck11"></div>
+            </div>
+            <div class="pdf-download">
+                <button class="download-button" onclick="downloadPDF()">Volleyball Regeln Download</button>
+            </div>
+        </div>
+        <script src="js/music.js"></script>
+        <script src="js/download.js"></script>
+    </body>
+</html>
