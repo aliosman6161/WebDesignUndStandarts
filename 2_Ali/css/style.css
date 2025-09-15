@@ -30,7 +30,7 @@ html, body {
    Schriftarten
    ========================================================================== */
 .oswald-200 {
-  font-family: "Oswald", sans-serif;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
   font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
@@ -60,7 +60,7 @@ html, body {
   height: 80px;
   padding: 1.5rem 10rem 1rem 10rem;
   position: relative;
-  font-family: "Oswald", sans-serif;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
   opacity: 0;
   animation: fadeInNav 0.7s ease forwards;
   animation-delay: 1.5s;
@@ -99,6 +99,7 @@ html, body {
 
 .nav li {
   position: relative;
+  white-space: nowrap;
 }
 
 .nav li::before {
@@ -119,20 +120,15 @@ html, body {
 }
 
 
-
-
-
-
-
 /* ==========================================================================
-   SECTION 1
+   SECTION 1 - WILLKOMMEN
    ========================================================================== */
 .hero-section {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
   height: calc(100vh - 120px);
-
+  position: relative;
 }
 
 .hero-media-bg {
@@ -148,9 +144,12 @@ html, body {
 }
 
 .hero-content {
-  grid-area: 2 / 1 / 4 / 3;
-  padding: 1rem 0 0 6rem;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  text-align: center;
   opacity: 0;
   animation: fadeInWelcome 0.7s ease forwards;
   animation-delay: 1.5s;
@@ -159,20 +158,21 @@ html, body {
 @keyframes fadeInWelcome {
   from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translate(-50%, calc(-50% - 20px));
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(-50%, -50%);
   }
 }
+
 
 .hero-content h1 {
   color: #FFFFFF;
   font-size: var(--font-xxl);
   margin: 0;
   padding: 0;
-  font-family: "Oswald", sans-serif;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
   font-weight:bold;
   text-shadow: #000000 -1px -1px 0;
   line-height:1.5em;
@@ -183,7 +183,7 @@ html, body {
   font-size: var(--font-md);
   margin: 0;
   padding-top: 20px;
-  font-family: "Oswald", sans-serif;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
   font-weight:bold;
   text-shadow: #000000 -1px -1px 0;
   line-height:1.5em;
@@ -199,7 +199,7 @@ html, body {
   background-color: var(--honda-rot);
   border: none;
   cursor: pointer;
-  font-family: "Oswald", sans-serif;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;;
   transition: background-color 0.3s, transform 0.2s;
 }
 
@@ -225,7 +225,6 @@ html, body {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  /*z-index: 12;*/
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #000000 100%);
 }
 
@@ -253,7 +252,7 @@ html, body {
   color: #FFFFFF;
   font-size: var(--font-extreme);
   font-weight: bold;
-  font-family: "Oswald", sans-serif;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   letter-spacing: 2rem;
@@ -282,7 +281,7 @@ html, body {
   list-style: none;
   margin: 0;
   padding: 0;
-  font-family: "Oswald", sans-serif;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;;
   color: #FFFFFF;
   gap: 15rem;
   justify-content: center;
@@ -390,7 +389,7 @@ html, body {
 .zero_to_hundred-vs h2 {
   color: #FFFFFF;
   font-size: var(--font-xxxl);
-  font-family: "Oswald", sans-serif;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
 }
 
 .zero_to_hundred-bike-video-cbr1000rr {
@@ -423,7 +422,7 @@ html, body {
 .zero_to_hundred-bike-time-cbr1000rr h2,
 .zero_to_hundred-bike-time-cbr500r h2 {
   color: #FFFFFF;
-  font-family: "Oswald", sans-serif;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
   font-size: var(--font-xxl);
 }
 
@@ -471,7 +470,7 @@ html, body {
 
 
 /* ==========================================================================
-   SECTION 6 - GALLERIE
+   SECTION 6 - GALERIE
    ========================================================================== */
 .gallery-wrapper {
   height: 100vh;
@@ -513,7 +512,7 @@ html, body {
   border-radius: 8px;
   font-size: var(--font-md);
   font-weight: bold;
-  font-family: "Oswald", sans-serif;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
   transition: background-color 0.3s, transform 0.2s;
 }
 
@@ -521,8 +520,6 @@ html, body {
   background-color: #cc2628;
   transform: scale(1.05);
 }
-
-
 
 
 
@@ -552,7 +549,7 @@ audio {
 .description-on-left h2 {
   color: #FFFFFF;
   font-size: var(--font-xxl);
-  font-family: "Oswald", sans-serif;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
   transform: rotate(-90deg);
   letter-spacing: 1rem;
 }
@@ -563,4 +560,108 @@ a {
 }
 a:visited {
   color: #FFFFFF;
+}
+
+
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (max-width: 1990px) {
+  /* Nav */
+  .nav {
+    font-size: var(--font-md);
+    height: 60px;
+  }
+  .nav-center h2 {
+    font-size: var(--font-xl);
+  }
+  .nav-left ul,
+  .nav-right ul {
+    gap: 12rem;
+  }
+  .hero-content {
+    padding: 1rem 2rem 0 2rem;
+  }
+  .hero-content h1 {
+    font-size: var(--font-xxl);
+    line-height: 1.2em;
+  }
+  .hero-content p {
+    font-size: var(--font-lg);
+  }
+  .learn-more-button {
+    font-size: var(--font-lg);
+    padding: 8px 16px;
+  }
+
+  /* Factsheet */
+  .factsheet-bike-name {
+    font-size: var(--font-xxxl);
+  }
+  .factsheet-specs {
+    gap: 100px;
+
+  }
+  .factsheet-specs ul {
+    font-size: var(--font-xl);
+    width: auto;
+    gap: 1rem;
+  }
+  .li-unten {
+    font-size: var(--font-md);
+  }
+  .scroll-button {
+    right: 20px;
+    bottom: 20px;
+  }
+  
+  /*zero to hundred*/
+  .zero_to_hundred-bike-label-cbr1000rr h2,
+  .zero_to_hundred-bike-label-cbr500r h2,
+  .zero_to_hundred-vs h2 {
+    font-size: var(--font-xxl);
+  }
+  .zero_to_hundred-bike-time-cbr1000rr h2,
+  .zero_to_hundred-bike-time-cbr500r h2 {
+    font-size: var(--font-xl);
+  }
+  .zero_to_hundred-bike-time-cbr1000rr span,
+  .zero_to_hundred-bike-time-cbr500r span {
+    font-size: var(--font-md);
+  }
+  .zero_to_hundred-bike-video-cbr1000rr {
+    margin-top: 100px;
+  }
+  .zero_to_hundred-bike-video-cbr500r {
+    margin-top: 100px;
+  }
+
+  /* Nuerburgring */
+  .nuerburgring-chart-container {
+    height: auto;
+    width: 70%;
+  }
+  .nuerburgring-track-container {
+    height: auto;
+    width: 60%;
+  }
+
+  /* Gallery */
+  .images-wrapper {
+    gap: 120px;
+  }
+  .gallery-image {
+    width: 400px;
+  }
+
+  /* Description on left */
+  .description-on-left {
+  width: 60px;
+  }
+  .description-on-left h2 {
+    font-size: var(--font-xl);
+    letter-spacing: 0.5rem;
+  }
 }

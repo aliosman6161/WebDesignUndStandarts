@@ -1,11 +1,12 @@
-/* Reset */
+/* ==========================================================================
+   Reset & Grundlegende Stile
+   ========================================================================== */
 *{
     margin:0;
     padding:0;
 }
-
 body{
-    background-color:#fbfbfe;
+    background-color:#e2e2e2;
     color:#595959;
     font-family:Arial, Helvetica, sans-serif;
     font-size:1.2em;
@@ -13,19 +14,21 @@ body{
     text-align:center;
 }
 
+/* ==========================================================================
+   Main Wrapper
+   ========================================================================== */
 #wrapper{
     width:2400px;
+    height: 1000px;
     margin:100px auto;
     background-color:#fff;
     padding:20px;
 }
-
 #header h1{
     margin-bottom:20px;
     font-size:2em;
     color:#093A80;
 }
-
 #navigation{
     background-color:#EEE;
     padding:10px;
@@ -47,15 +50,14 @@ body{
     color:#E7BC41;
     text-decoration:underline;
 }
-
-
-
 h2 {
     margin-bottom:80px;
 }
 
 
-/* Team Galerie */
+/* ==========================================================================
+   Team-Galerie
+   ========================================================================== */
 #team-row{
     width:100%;
     text-align:center;
@@ -80,7 +82,11 @@ h2 {
     color:#093A80;
 }
 
-/* Spezialeffekt: Motorrad-Bild ragt aus der Box */
+/* ==========================================================================
+   Bilder
+   ========================================================================== */
+
+/* Honda Motorrad */
 .honda-img{
     height:500px;
     bottom: 0px;
@@ -94,7 +100,7 @@ h2 {
 	position: absolute;
 }
 
-
+/* F1 */
 .f1-img{
     height:650px;
     top: 1px;
@@ -110,7 +116,7 @@ h2 {
 
 }
 
-
+/* Mercedes Auto */
 .mercedes-img{
     height:300px;
     bottom: -40px;
@@ -124,23 +130,23 @@ h2 {
 	position: absolute;
 }
 
+/* Volleyball */
+.volleyball-img {
+    height:500px;
+    top: -40px;
+    left: -40px;
+	position: absolute;
+}
 
 
-
-
-
-
-
-
-
-
-
+/* ==========================================================================
+   Team Galerie Beschreibung/Info
+   ========================================================================== */
 #team-row-info{
     width:100%;
     text-align:center;
     margin-top:20px;
 }
-
 .team-box-info{
     display:inline-block;
     width:250px;
@@ -153,7 +159,6 @@ h2 {
     overflow:visible;
     position:relative;
 }
-
 .btn {
     display:inline-block;
     padding:8px 16px;
@@ -166,28 +171,15 @@ h2 {
     position:absolute;
     bottom:20px;
     left:50%;
-    margin-left:-65px; /* Hälfte der Button-Breite (120px / 2) *//
+    margin-left:-65px;
 }
-
 .btn:hover {
     background-color:#093A80;
     color:#FFFFFF;
 }
-
-
 .box-text {
     font-size:0.85em;
     color:#FFFFFF;
     line-height:1.4em;
     padding: 20px;
-}
-
-
-
-
-
-
-
-*d {
-	outline: 1px dotted red;
 }
