@@ -1,4 +1,3 @@
-// SCROLLING FUNCTIONALITY
 document.addEventListener('DOMContentLoaded', function () {
 
   // ========================
@@ -8,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const sections = [
     {btn: 'scroll-to-factsheet-cbr1000rr', section: 'factsheet-cbr1000rr'},
     {btn: 'scroll-to-factsheet-cbr500r', section: 'factsheet-cbr500r'},
-    {btn: 'scroll-to-zero-to-hundred', section: '0-100'},
+    {btn: 'scroll-to-zero-to-hundred', section: 'zero_to_hundred'},
     {btn: 'scroll-to-nuerburgring', section: 'nuerburgring'},
     {btn: 'scroll-to-gallery', section: 'gallery'}
   ];
@@ -30,9 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // Media Volume Setup
   // ========================
 
-  const audio = document.getElementById("audio-cbr500r");
-  if (audio) audio.volume = 1.0;
-
   const video = document.getElementById("cbr500r-video");
   if (video) video.volume = 0.3;
 
@@ -44,7 +40,6 @@ const xValues = ["CBR 1000 RR (7.15 Min)", "CBR 500 R (10.83 Min)"];
 const yValues = [7.15, 10.83];
 const barColors = ["#e60000", "#0066cc"];
 
-// NEU: Canvas + Kontext holen
 const canvas = document.getElementById("myChart");
 if (canvas && window.Chart) {
   const ctx = canvas.getContext("2d");

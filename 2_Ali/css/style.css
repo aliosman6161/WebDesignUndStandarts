@@ -1,8 +1,3 @@
-/** {*/
-/*  outline: 1px solid red;*/
-/*}*/
-
-
 /* ==========================================================================
    Root-Variablen & Basis-Styles
    ========================================================================== */
@@ -10,18 +5,16 @@
   --honda-rot: #971C1E;
   --honda-blau: #1A328B;
 
-  /* Basisgröße */
-  font-size: 16px; /* 1rem = 16px */
+  font-size: 16px;
 
-  /* Typografie-Skala */
-  --font-xs: 0.875rem;  /* 14px  → kleine Labels, Navi */
-  --font-sm: 1rem;      /* 16px  → Standard-Text, Body */
-  --font-md: 1.5rem;    /* 24px  → Buttons, Absätze */
-  --font-lg: 2rem;      /* 32px  → Untertitel, kleinere Headings */
-  --font-xl: 3rem;      /* 48px  → Hauptüberschrift */
-  --font-xxl: 4rem;     /* 64px  → Hero-Title */
-  --font-xxxl: 7rem;    /* 112px → Extrem, z. B. „VS“ oder große Section-Titel */
-  --font-extreme: 15rem; /* 240px → Sehr groß, z. B. für Wasserzeichen */
+  --font-xs: 0.875rem;
+  --font-sm: 1rem;
+  --font-md: 1.5rem;
+  --font-lg: 2rem;
+  --font-xl: 3rem;
+  --font-xxl: 4rem;
+  --font-xxxl: 7rem;
+  --font-extreme: 15rem;
 
 }
 
@@ -46,7 +39,6 @@ html, body {
 /* ==========================================================================
     NAVIGATION-BAR
    ========================================================================== */
-/* Animation: Fade-In & Slide-Down für Navigation */
 @keyframes fadeInNav {
   from {
     opacity: 0;
@@ -63,12 +55,11 @@ html, body {
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   background-color: #000000;
-  color: white;
+  color: #FFFFFF;
   font-size: var(--font-md);
   height: 80px;
   padding: 1.5rem 10rem 1rem 10rem;
   position: relative;
-  /*z-index: 10;*/
   font-family: "Oswald", sans-serif;
   opacity: 0;
   animation: fadeInNav 0.7s ease forwards;
@@ -117,7 +108,7 @@ html, body {
   bottom: 0;
   width: 100%;
   height: 2px;
-  background-color: white;
+  background-color: #FFFFFF;
   transform: scaleX(0);
   transition: transform 0.3s ease;
   display: block;
@@ -160,7 +151,6 @@ html, body {
   grid-area: 2 / 1 / 4 / 3;
   padding: 1rem 0 0 6rem;
   position: relative;
-  /*z-index: 1;*/
   opacity: 0;
   animation: fadeInWelcome 0.7s ease forwards;
   animation-delay: 1.5s;
@@ -177,7 +167,7 @@ html, body {
   }
 }
 
-.hero-content h2 {
+.hero-content h1 {
   color: #FFFFFF;
   font-size: var(--font-xxl);
   margin: 0;
@@ -205,7 +195,7 @@ html, body {
   margin-top: 20px;
   padding: 10px 20px;
   font-size: var(--font-md);
-  color: white;
+  color: #FFFFFF;
   background-color: var(--honda-rot);
   border: none;
   cursor: pointer;
@@ -225,8 +215,7 @@ html, body {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  /*z-index: 12;*/
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 80%, black 100%);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 80%, #000000 100%);
 }
 
 .gradient-bottom {
@@ -237,7 +226,7 @@ html, body {
   height: 100%;
   pointer-events: none;
   /*z-index: 12;*/
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, black 100%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #000000 100%);
 }
 
 
@@ -255,14 +244,13 @@ html, body {
 .factsheet-main-container {
   grid-area: 1 / 1 / 4 / 6;
   position: relative;
-
 }
 .factsheet-bike-name {
   position: absolute;
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
-  color: white;
+  color: #FFFFFF;
   font-size: var(--font-extreme);
   font-weight: bold;
   font-family: "Oswald", sans-serif;
@@ -270,12 +258,14 @@ html, body {
   padding: 0;
   letter-spacing: 2rem;
   white-space: nowrap;
+  height: auto;
+  width: auto;
 }
 .factsheet-black-overlay{
   position: absolute;
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%, black 100%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%, #000000 100%);
 }
 .factsheet-lower-container {
   grid-area: 4 / 1 / 5 / 6;
@@ -286,20 +276,21 @@ html, body {
   position: relative;
   display: flex;
   justify-content: center;
-  gap: 200px;
+  gap: 150px;
 }
 .factsheet-specs ul{
   list-style: none;
   margin: 0;
   padding: 0;
   font-family: "Oswald", sans-serif;
-  color: white;
+  color: #FFFFFF;
   gap: 15rem;
   justify-content: center;
   align-items: center;
   font-size: var(--font-xl);
   font-weight: bold;
   letter-spacing: 0.1rem;
+  width: 300px;
 }
 .li-oben {
   font-weight: bold;
@@ -322,13 +313,13 @@ html, body {
 }
 .scroll-button svg {
   display: block;
-  fill: white;
+  fill: #FFFFFF;
   height: 50px;
   width: 50px;
   transition: transform 0.2s;
 }
 .scroll-button:hover svg {
-  transform: scale(1.1); /* kleiner Hover-Effekt */
+  transform: scale(1.1);
 }
 
 
@@ -337,18 +328,17 @@ html, body {
   position: absolute;
   height: 100%;
   width: 100%;
-  background: radial-gradient(ellipse 50% 40% at 50% 60%, #971c1e, black);
+  background: radial-gradient(ellipse 50% 40% at 50% 60%, #971c1e, #000000);
 }
 #factsheet-bike-img-cbr1000rr {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  height: 80%;
 }
 #factsheet-blue-dropshadow {
   height: 100%;
-  background: radial-gradient(ellipse 40% 70% at 50% 0%, #1a328b, black);
+  background: radial-gradient(ellipse 40% 70% at 50% 0%, #1a328b, #000000);
 }
 
 
@@ -357,18 +347,17 @@ html, body {
   position: absolute;
   height: 100%;
   width: 100%;
-  background: radial-gradient(ellipse 50% 40% at 50% 60%, #1A328B, black);
+  background: radial-gradient(ellipse 50% 40% at 50% 60%, #1A328B, #000000);
 }
 #factsheet-bike-img-cbr500r {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  height: 70%;
 }
 #factsheet-red-dropshadow {
   height: 100%;
-  background: radial-gradient(ellipse 40% 70% at 50% 0%, #971C1E, black);
+  background: radial-gradient(ellipse 40% 70% at 50% 0%, #971C1E, #000000);
 }
 
 
@@ -399,7 +388,7 @@ html, body {
 .zero_to_hundred-bike-label-cbr1000rr h2,
 .zero_to_hundred-bike-label-cbr500r h2,
 .zero_to_hundred-vs h2 {
-  color: white;
+  color: #FFFFFF;
   font-size: var(--font-xxxl);
   font-family: "Oswald", sans-serif;
 }
@@ -421,19 +410,19 @@ html, body {
   grid-area: 4 / 2 / 5 / 3;
   display: flex;
   justify-content: center;
-  background: radial-gradient(ellipse 30% 50% at 50% 50%, rgba(255, 255, 255, 0.25), black);
+  background: radial-gradient(ellipse 30% 50% at 50% 50%, rgba(255, 255, 255, 0.25), #000000);
 }
 
 .zero_to_hundred-bike-time-cbr500r {
   grid-area: 4 / 4 / 5 / 5;
   display: flex;
   justify-content: center;
-  background: radial-gradient(ellipse 30% 50% at 50% 50%, rgba(255, 255, 255, 0.25), black);
+  background: radial-gradient(ellipse 30% 50% at 50% 50%, rgba(255, 255, 255, 0.25), #000000);
 }
 
 .zero_to_hundred-bike-time-cbr1000rr h2,
 .zero_to_hundred-bike-time-cbr500r h2 {
-  color: white;
+  color: #FFFFFF;
   font-family: "Oswald", sans-serif;
   font-size: var(--font-xxl);
 }
@@ -469,7 +458,7 @@ html, body {
 }
 
 .nuerburgring-chart-container {
-  background-color: black;
+  background-color: #000000;
   height: auto;
   width: 70%;
 }
@@ -498,8 +487,6 @@ html, body {
 }
 
 .gallery-image {
-  width: 500px;
-  height: auto;
   transition: transform 0.3s ease;
 }
 
@@ -510,7 +497,7 @@ html, body {
 }
 
 .pdf-download-btn {
-  text-align: center; /* zentriert den Button */
+  text-align: center;
   position: absolute;
   left: 50%;
   bottom: 5%;
@@ -521,7 +508,7 @@ html, body {
   display: inline-block;
   padding: 12px 25px;
   background-color: #971C1E;
-  color: white;
+  color: #FFFFFF;
   text-decoration: none;
   border-radius: 8px;
   font-size: var(--font-md);
@@ -553,31 +540,27 @@ audio {
   height: 35px;
 }
 
-/*section beschreibung links*/
 .description-on-left {
   height: 100vh;
   width: 100px;
   position: absolute;
-  /*z-index: 1000;*/
   display: flex;
   justify-content: center;
   align-items: center;
   white-space: nowrap;
 }
 .description-on-left h2 {
-  color: white;
+  color: #FFFFFF;
   font-size: var(--font-xxl);
   font-family: "Oswald", sans-serif;
   transform: rotate(-90deg);
   letter-spacing: 1rem;
 }
 
-/*href styling entfernen*/
 a {
-  color: white;
+  color: #FFFFFF;
   text-decoration: none;
 }
 a:visited {
-  color: white;
+  color: #FFFFFF;
 }
-
