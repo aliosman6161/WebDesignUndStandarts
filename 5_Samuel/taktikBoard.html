@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link href="css/taktikBoard.css" rel="stylesheet" type="text/css" />
+        <link href="css/draw.css" rel="stylesheet" type="text/css" />
+        <link href="css/dragNplace.css" rel="stylesheet" type="text/css">
+        <link href="css/slider.css" rel="stylesheet" type="text/css">
+        <title>
+            Taktik Planer
+        </title>
+    </head>
+    <body>
+        <nav class="navbar">
+            <a href='index.html'>Home</a>
+            <a href="aufstellung.html">Aufstellung</a>
+            <a href="technik.html">Technik</a>
+            <a href='taktikBoard.html' class="active">Taktik Planer</a>
+        </nav>
+        <div class="music-toggle">
+            <span>Hintergrundmusik</span>
+            <label class="switch">
+                <input type="checkbox" id="musicSwitch">
+                <span class="slider"></span>
+            </label>
+            <audio id="bgMusic" loop muted>
+                <source src="audio/Mein-Song.mp3" type="audio/mpeg">
+                Dein Browser unterstützt kein Audio.
+            </audio>
+        </div>
+        <div class="page">
+            <div class="content">
+                <div class="taktik-board">
+                    <div class="left">
+                        <h1>Objekte</h1>
+                        <div class="objects">
+                            <div class="object-raster">
+                                <img src="svg/Außenangreifer.svg"
+                                    alt="Außenangriefer" class="draggable"
+                                    draggable="true" />
+                                <img src="svg/Mittelblocker.svg"
+                                    alt="Mittelblocker"
+                                    class="draggable" draggable="true" />
+                                <img src="svg/Diagonal.svg"
+                                    alt="DiagonalerAngreifer" class="draggable"
+                                    draggable="true" />
+                                <img src="svg/Libero.svg" alt="Libero"
+                                    class="draggable" draggable="true" />
+                                <img src="svg/Zuspieler.svg" alt="Zuspieler"
+                                    class="draggable" draggable="true" />
+                                <img src="svg/pinchServer.svg" alt="PinchServer"
+                                    class="draggable" draggable="true" />
+                                <img src="svg/pos1.svg" alt="Position 1"
+                                    class="draggable" draggable="true" />
+                                <img src="svg/pos2.svg" alt="Position 2"
+                                    class="draggable" draggable="true" />
+                                <img src="svg/pos3.svg" alt="Position 3"
+                                    class="draggable" draggable="true" />
+                                <img src="svg/pos4.svg" alt="Position 4"
+                                    class="draggable" draggable="true" />
+                                <img src="svg/pos5.svg" alt="Position 5"
+                                    class="draggable" draggable="true" />
+                                <img src="svg/pos6.svg" alt="Position 6"
+                                    class="draggable" draggable="true" />
+                            </div>
+                            <button id="resetButton">Löschen</button>
+                        </div>
+                        <div class="draw">
+                            <div class="color-palette" id="colorPalette">
+                                <div class="color-swatch" data-color="#000000"
+                                    style="background-color: #000000;"></div>
+                                <div class="color-swatch" data-color="#ff0000"
+                                    style="background-color: #ff0000;"></div>
+                                <div class="color-swatch" data-color="#00ff00"
+                                    style="background-color: #00ff00;"></div>
+                                <div class="color-swatch" data-color="#0000ff"
+                                    style="background-color: #0000ff;"></div>
+                                <div class="color-swatch" data-color="#ffff00"
+                                    style="background-color: #ffff00;"></div>
+                                <div class="color-swatch" data-color="#ff00ff"
+                                    style="background-color: #ff00ff;"></div>
+                                <div class="color-swatch" data-color="#00ffff"
+                                    style="background-color: #00ffff;"></div>
+                                <div class="color-swatch" data-color="#ffffff"
+                                    style="background-color: #ffffff;"></div>
+                                <div class="color-swatch" data-color="#ff6a00"
+                                    style="background-color: #ff6a00;"></div>
+                                <div class="color-swatch" data-color="#a15f25"
+                                    style="background-color: #a15f25;"></div>
+                                <div class="color-swatch" data-color="#236023"
+                                    style="background-color: #236023;"></div>
+                                <div class="color-swatch" data-color="#a601f3"
+                                    style="background-color: #a601f3;"></div>
+                                <div class="color-swatch" data-color="#ff0059"
+                                    style="background-color: #ff0059;"></div>
+                                <div class="color-swatch" data-color="#00ff5e"
+                                    style="background-color: #00ff5e;"></div>
+                                <div class="color-swatch" data-color="#000000">
+                                </div>
+                            </div>
+                            <div class="tools">
+                                <div class="schriftgröße">
+                                    <h2>Stiftgröße :</h2>
+                                    <input type="range" id="lineWidthSlider"
+                                        min="1"
+                                        max="50" value="3" />
+                                </div>
+                                <div class="schreiben">
+                                    <h2>Werkzeuge :</h2>
+                                    <div class="tool-buttons">
+                                        <button id="penTool"
+                                            class="tool active">Stift</button>
+                                        <button id="eraserTool"
+                                            class="tool">Radiergummi</button>
+                                        <button id="delete">Löschen</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="middle">
+                        <h1>Taktik Planer</h1>
+                        <div class="drawing-area" id="drawingArea">
+                            <canvas class="canvas"
+                                id="taktikBoardCanvas"></canvas>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <h1>Legende</h1>
+                        <div class="legende">
+                            <ul>
+                                <li><strong>Außenangreifer (AA):</strong>
+                                    Spieler, der
+                                    hauptsächlich von den Außenpositionen
+                                    angreift aber auch hinten annimmt und vorne
+                                    mit zum Block Hochspringt.</li>
+                                <li><strong>Mittelblocker (MB):</strong>
+                                    Spieler, dessen Hauptaufgabe das Blocken
+                                    ist.
+                                    Er Block links, rechts und in der mitte und
+                                    greift auch von der mitte an.
+                                </li>
+                                <li><strong>Diagonaler Angreifer (DA):</strong>
+                                    Spieler, der von
+                                    der Diagonalposition angreift. Dieser ist of
+                                    von der Annahme
+                                    Ausgeschlossen um schnell auf die
+                                    Diagonalposition zu kommen.</li>
+                                <li><strong>Libero (LB):</strong>
+                                    Defensivspezialist,
+                                    der keine Angriffe ausführt. Er koordiniert
+                                    die Verteidigung,
+                                    hat den größten Bereich zum abdecken und ist
+                                    für die Blocksicherung verantwortlich</li>
+                                <li><strong>Zuspieler (ZS):</strong> Spieler,
+                                    der die
+                                    Angriffe vorbereitet. Ihm wird der erste
+                                    Ball zugespielt und leitet den zweiten
+                                    weiter
+                                    zum Angreifer. Er blockt ebenfalls und hat
+                                    die Rolle des Spielemachers </li>
+                                <li><strong>PinchServer (PS):</strong> Spieler,
+                                    der nur zum Aufschlag eingeweschelt wird.
+                                    Ein aufschlagsspezialist welcher den
+                                    Spielfluss ändern soll mit Starken
+                                    Aufschlägen.
+                                    Nach dem Aufschlag wird er wieder
+                                    ausgewechselt </li>
+                                <li><strong>Position 1-6:</strong>
+                                    Standardpositionen
+                                    auf dem Spielfeld. Anfangend von der
+                                    Aufschlagposition 1
+                                    (unten Rechts) und gehen der reihe nach
+                                    gegen der Uhrzeiger sinn (3 zahlen am netz,
+                                    3 zahlen Hinten)</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/draw.js"></script>
+        <script src="js/dragNplace.js"></script>
+        <script src="js/music.js"></script>
+    </body>
+</html>

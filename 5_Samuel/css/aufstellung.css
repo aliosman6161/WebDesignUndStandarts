@@ -1,0 +1,56 @@
+.explain-container{
+    display: grid;
+    grid-template-columns:  80% 20%;
+}
+
+.aufstellung-img{
+    justify-self: center;
+    align-self: center;
+    border-radius: 15px;
+}
+
+.grid-container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+.Läufer {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 30px;
+      height: 100%; /* Alle Karten gleich hoch */
+      box-sizing: border-box;
+}
+
+.grid-container button {
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.3); /* halbtransparentes Weiß */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* leichter Rahmen */
+    backdrop-filter: blur(10px); /* milchiger Effekt */
+    color: white;
+}
+
+.grid-container button:hover {
+    transform: scale(1.05);
+    background-color: #fdd116;
+}
+
+.explain{
+    font-size: large;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow-y:auto;
+}

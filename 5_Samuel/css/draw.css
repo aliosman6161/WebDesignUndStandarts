@@ -1,0 +1,83 @@
+.draw {
+    background: rgba(255, 255, 255, 0.3); /* halbtransparentes Weiß */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* leichter Rahmen */
+    backdrop-filter: blur(10px); /* milchiger Effekt */
+    width: 95%;
+    height: fit-content;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow-y:auto;
+}
+.color-palette {
+    padding-left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.color-swatch {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: transform 0.1s ease;
+}
+
+.color-swatch:hover {
+    transform: scale(1.1);
+}
+
+.color-swatch.active {
+    border: 3px solid #ffffff;
+}
+
+
+.tool-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;   
+}
+
+.tool,#delete {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    background: rgba(255, 255, 255, 0.3); /* halbtransparentes Weiß */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* leichter Rahmen */
+    backdrop-filter: blur(10px); /* milchiger Effekt */
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    color: #ffffff;
+}
+
+.tool:hover {
+    transform: scale(1.05);
+}
+
+.tool.active {
+    background-color:#fdd116;
+    color: #ffffff;
+}
+
+#delete:hover {
+    transform: scale(1.05);
+    background-color: #cf0000;
+}
+
+.schriftgröße {
+    padding-left: 10px;
+}
+
+.schreiben {
+    padding-left: 10px;
+}
+
+#lineWidthSlider {
+    width: 90%;
+    color: #000;
+}

@@ -1,0 +1,94 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;          /* wichtig für % Höhe */
+    min-height: 100%;
+    font-family: Arial;
+    text-shadow: 4px 4px 6px rgba(0,0,0);
+    line-height: 1.5;
+    font-size: large;
+    color: #ffffff;
+}
+
+.page {
+    backdrop-filter: blur(10px);
+    min-width: 100%;
+    min-height: 100%;       /* wächst mit Inhalt */
+}
+
+
+body {
+    background-image: 
+      radial-gradient(circle, transparent 10%, rgba(0,0,0,0.9) 100%),
+      url('../assets/VolleyballBG.jpg');
+    background-color: black;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.navbar {
+    background: rgba(0,0,0,0.7); /* halbtransparentes Weiß */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* leichter Rahmen */
+    border-radius:60px; /* abgerundet links und rechts */
+    backdrop-filter: blur(10px); /* milchiger Effekt */
+    position: fixed; z-index: 1;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 20px;
+    width: fit-content;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Beispiel Navigation Links */
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    font-size: 18px;
+    position: relative;
+    border-radius: 8px;
+    padding: 10px;
+}
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+/* Unterlinie beim Hover */
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* aktive Unterlinie standardmäßig */
+.navbar a.active::after {
+    width: 100%;
+}
+
+/* Unterlinie vom aktiven Link ausblenden, wenn ein anderer Link gehovt wird */
+.navbar:hover a.active::after {
+    width: 0;
+}
+
+.content {
+    position:relative;
+    top: 70px; /* Abstand zur Sidebar */
+    bottom: 50px; /* Abstand zum unteren Rand */
+    left: 0;
+    width: 100%;
+    max-width:96%;
+    padding: 20px;
+    box-sizing: border-box; /* Seite bleibt in eienr Größe inder sie sich nicht nach links oder recht schiebt*/
+    margin-left: 2%;
+    margin-right: 2%;
+    color: white;
+}

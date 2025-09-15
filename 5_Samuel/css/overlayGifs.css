@@ -1,0 +1,55 @@
+/* Overlay standardmäßig unsichtbar */
+.overlay {        /* mindestens so hoch wie der Container */
+    background: rgba(0,0,0,0.8);
+    z-index: 2;
+    position: fixed;        /* fixiert an der Viewport-Kante */
+    top: 0;
+    left: 0;
+    width: 100%;           /* volle Breite */
+    height: 100%;          /* volle Höhe */
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body.no-scroll {
+    overflow: hidden;         /* verhindert Scrollen der Seite, wenn Overlay aktiv ist */
+}
+
+
+/* Nur wenn sichtbar */
+.overlay.active {
+    display: flex;
+}
+
+.overlay .gif-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay img {
+    max-width: 70%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+.overlay button.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #ffffff; /* halbtransparentes Weiß */
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 16px;
+}
+.overlay button.close-btn:hover {
+ transform: scale(1.05);
+ background: #fdd116;
+}

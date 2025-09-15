@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/aufstellung.css" rel="stylesheet" type="text/css" />
+    <link href="css/overlayGifs.css" rel="stylesheet" type="text/css" />
+    <link href="css/slider.css" rel="stylesheet" type="text/css">
+    <title>
+        Aufstellung
+    </title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href='index.html'>Home</a>
+        <a href="aufstellung.html" class="active">Aufstellung</a>
+        <a href="technik.html">Technik</a>
+        <a href='taktikBoard.html'>Taktik Planer</a>
+    </nav>
+    <div class="overlay" id="overlay">
+        <button class="close-btn" onclick="closeOverlay()">Schließen</button>
+        <div class="gif-container">
+            <img id="gif1" alt="GIF 1" src="none">
+            <img id="gif2" alt="GIF 2" src="none">
+        </div>
+    </div>
+    <div class="music-toggle">
+        <span>Hintergrundmusik</span>
+        <label class="switch">
+            <input type="checkbox" id="musicSwitch">
+            <span class="slider"></span>
+        </label>
+        <audio id="bgMusic" loop muted>
+            <source src="audio/Mein-Song.mp3" type="audio/mpeg">
+            Dein Browser unterstützt kein Audio.
+        </audio>
+    </div>
+    <div class="page">
+        <div class="content">
+            <h1>Aufstellung 5-1 Läufersystem</h1>
+            <div class="explain-container">
+                <div class="explain">
+                    <p>Das 5-1 Läufersystem ist eine gängige offensive
+                        Aufstellung im Volleyball, die auf der
+                        Flexibilität und Beweglichkeit der Spieler
+                        basiert. Diese Aufstellung ermöglicht es dem
+                        Team, schnell auf Angriffe zu reagieren,
+                        immer mindestens 3 Angriffpositionen zu nutzen und erfordert eine hohe
+                        Kommunikation und Koordination zwischen den
+                        Spielern, um effektiv zu sein. Der Name "Läufer"
+                        beschreibt die Bewegung des einzlenen Zuspielers,
+                        welcher egal von welcher Position aus mittig nah zum Netz läuft (zwischen Position 2 und 3).
+                        Die zahl des Läufersystem basiert demnach auf die Startposition des Zuspielers.</p>
+                </div>
+                <img src="assets/volleyball-aufstellung.jpeg" alt="Volleyballl Aufstellung" width="225" height="150"
+                    class="aufstellung-img">
+            </div>
+            <div class="grid-container">
+                <div class="Läufer">
+                    <strong>Läufer 4 (Zuspieler auf Position 4)</strong>
+                    <ul>
+                        <li>Situation: Der Zuspieler ist bereits in der Angriffszone, aber auf der linken Seite.</li>
+                        <li>Läuferbewegung: Er rotiert nach vorne rechts (Position 2).</li>
+                        <li>Taktik: Der Außenangreifer tauscht mit dem Zuspieler die Position, um die gewohnte
+                            Angriffsstruktur zu behalten.</li>
+                    </ul>
+                    <div class="beispiel">
+                        <button class="buttonLäufer"
+                            onclick="openOverlay('gifs/AnnahmeL4.gif', 'gifs/AufschlagL4.gif')">Läufer 4
+                            Beispiel</button>
+                    </div>
+                </div>
+                <div class="Läufer">
+                    <strong>Läufer 3 (Zuspieler auf Position 3)</strong>
+                    <ul>
+                        <li>Situation: Der Zuspieler ist bereits in der Angriffszone, aber in der Mitte.</li>
+                        <li>Läuferbewegung: Er rotiert nach vorne rechts (Position 2).</li>
+                        <li>Taktik: Der Mittelblocker tauscht mit dem Zuspieler die Position, um die gewohnte
+                            Angriffsstruktur zu behalten.</li>
+                    </ul>
+                    <div class="beispiel">
+                        <button class="buttonLäufer"
+                            onclick="openOverlay('gifs/AnnahmeL3.gif', 'gifs/AufschlagL3.gif')">Läufer 3
+                            Beispiel</button>
+                    </div>
+                </div>
+                <div class="Läufer">
+                    <strong>Läufer 2 (Zuspieler auf Position 2)</strong>
+                    <ul>
+                        <li>Situation: Der Zuspieler ist bereits auf Position (optimal für alle).</li>
+                        <li>Läuferbewegung: Er bewegt sich nicht (ist bereit fürs Zuspiel).</li>
+                        <li>Alle Spieler stehen bereits in der Richtigen Position, keine anpassung von nöten</li>
+                    </ul>
+                    <div class="beispiel">
+                        <button class="buttonLäufer"
+                            onclick="openOverlay('gifs/AnnahmeL2.gif', 'gifs/AufschlagL2.gif')">Läufer 2
+                            Beispiel</button>
+                    </div>
+                </div>
+                <div class="Läufer">
+                    <strong>Läufer 5 (Zuspieler auf Position 5)</strong>
+                    <ul>
+                        <li> der Zuspieler ist hinten links</li>
+                        <li>Läuferbewegung: Er rotiert nach vorne rechts (Position 2).</li>
+                        <li>Taktik: Der Diagonalangreifer macht dem Zuspieler auf der 2 Platz, verlässt aber die
+                            Position nicht um anzugreifen.</li>
+                    </ul>
+                    <div class="beispiel">
+                        <button class="buttonLäufer"
+                            onclick="openOverlay('gifs/AnnahmeL5.gif', 'gifs/AufschlagL5.gif')">Läufer 5
+                            Beispiel</button>
+                    </div>
+                </div>
+                <div class="Läufer">
+                    <strong>Läufer 6 (Zuspieler auf Position 6)</strong>
+                    <ul>
+                        <li>Situation: Der Zuspieler ist hinten in der Mitte.</li>
+                        <li>Läuferbewegung: Er rotiert nach vorne rechts (Position 2).</li>
+                        <li>Taktik: Der Zuspieler bewegt sich nach vorne. Mittelblcoker und Diagonalangreifer machen
+                            Platz und sind bereit für einen Angriff.</li>
+                    </ul>
+                    <div class="beispiel">
+                        <button class="buttonLäufer"
+                            onclick="openOverlay('gifs/AnnahmeL6.gif', 'gifs/AufschlagL6.gif')">Läufer 6
+                            Beispiel</button>
+                    </div>
+                </div>
+                <div class="Läufer">
+                    <strong>Läufer 1 (Zuspieler auf Position 1)</strong>
+                    <ul>
+                        <li>Situation: Der Zuspieler ist hinten rechts.</li>
+                        <li>Läuferbewegung: Er rotiert nach vorne rechts (Position 2).</li>
+                        <li>Taktik: Der Zuspieler bewegt sich nach vorne. Der Außenangreifer macht dem Zuspieler platz,
+                            und ist Angriffsbereit.</li>
+                    </ul>
+                    <div class="beispiel">
+                    <button class="buttonLäufer"
+                        onclick="openOverlay('gifs/AnnahmeL1.gif', 'gifs/AufschlagL1.gif')">Läufer 1 Beispiel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="js/gifs.js"></script>
+    <script src="js/music.js"></script>
+</body>
+
+</html>
