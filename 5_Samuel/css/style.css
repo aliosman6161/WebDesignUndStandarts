@@ -4,7 +4,7 @@ html, body {
     height: 100%;          /* wichtig für % Höhe */
     min-height: 100%;
     font-family: Arial;
-    text-shadow: 4px 4px 6px rgba(0,0,0);
+    text-shadow: 4px 4px 6px #000000;
     line-height: 1.5;
     font-size: large;
     color: #ffffff;
