@@ -109,16 +109,15 @@ p {
    ============================================ */
 
 .site-header {
-    position: fixed;
+    position: sticky;
+    z-index: 10;    /*Für Sticky Header*/
     top: 0;
     left: 0;
     right: 0;
     height: var(--header-height);
     background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--color-border);
-    z-index: 900;
     transition: var(--transition-base);
 }
 
@@ -209,7 +208,6 @@ p {
         rgba(0,0,0,0.1) 50%,
         rgba(0,0,0,0.5) 100%
     );
-    z-index: 1;
 }
 
 .hero-content {
@@ -218,7 +216,6 @@ p {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    z-index: 2;
     color: var(--color-secondary);
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
@@ -242,11 +239,10 @@ p {
     color: var(--color-secondary);
     font-size: var(--font-size-small);
     text-align: center;
-    z-index: 1;
 }
 
 /* ============================================
-   Sprung-Navigation (Bild-Kachelraster)
+   Sprung-Navigation 
    ============================================ */
 
 .jump-navigation {
