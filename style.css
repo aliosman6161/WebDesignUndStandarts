@@ -4,7 +4,6 @@
 *{
     margin:0;
     padding:0;
-    /outline: 1px red solid;
 }
 body{
     background-color:#e2e2e2;
@@ -88,13 +87,11 @@ h2 {
 
 /* Honda Motorrad */
 .honda-img{
-    height:350px;
     bottom: 0px;
     left: 0px;
 	position: absolute;
 }
 .motorrad-logo{
-    height:90px;
     top: 10px;
     left: 55px;
 	position: absolute;
@@ -102,14 +99,12 @@ h2 {
 
 /* F1 */
 .f1-img{
-    height:300px;
     bottom: -30px;
     left: -50px;
 	position: absolute;
 
 }
 .f1-logo{
-    height:50px;
     top: 20px;
     left: 10px;
 	position: absolute;
@@ -118,13 +113,11 @@ h2 {
 
 /* Mercedes Auto */
 .mercedes-img{
-    height:270px;
     bottom: -40px;
     left: 0px;
 	position: absolute;
 }
 .mercedes-logo{
-    height:150px;
     top: 10px;
     left: 35px;
 	position: absolute;
@@ -132,7 +125,6 @@ h2 {
 
 /* Volleyball */
 .volleyball-img {
-    height:400px;
     top: -40px;
     left: -40px;
 	position: absolute;
@@ -140,7 +132,6 @@ h2 {
 
 /* SL 500 AMG*/
 .sl500-img {
-    height:200px;
     bottom: 0px;
     left: 0px;
 	position: absolute;
