@@ -14,14 +14,6 @@
         let targetSpeed = 180;
         let acceleration = 0.5;
         
-        // Canvas-Größe für Retina-Displays
-        const dpr = window.devicePixelRatio || 1;
-        canvas.width = 400 * dpr;
-        canvas.height = 400 * dpr;
-        canvas.style.width = '400px';
-        canvas.style.height = '400px';
-        ctx.scale(dpr, dpr);
-        
         /**
          * Zeichnet den Tachometer-Hintergrund
          */

@@ -14,7 +14,9 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <a href="#" aria-label="Zur Startseite">Mercedes Showcase</a>
+                    <a href="#" aria-label="Zur Startseite">
+                        <img src="assets/pictures/svg.svg" type="svg" height="60px">
+                    </a>
                 </div>
                 <nav class="main-nav" aria-label="Hauptnavigation">
                     <ul>
@@ -45,7 +47,7 @@
         </div>
     </section>
     
-    <!-- Sprung-Navigation mit Bild-Kacheln -->
+    <!-- Sprung-Navigation mit Bild-Kacheln also den 3 Auts sl slk usw-->
     <section class="jump-navigation" aria-labelledby="nav-heading">
         <div class="container">
             <h2 id="nav-heading">Fahrzeuge</h2>
@@ -107,7 +109,7 @@
     <!-- Hauptinhalt -->
     <main id="main">
         <!-- Auto 1 Abschnitt -->
-        <section id="auto-1" class="auto-section" aria-labelledby="auto1-heading">
+        <section id="auto-1" class="auto-section">
             <div class="container">
                 <h2 id="auto1-heading">Wunderschöner Oldie - Mercedes SL 500</h2>
                 <div class="auto-content">
@@ -126,7 +128,6 @@
                         <figure class="auto-asset">
                             <video controls class="media-controls" width="600" height="338">
                              <source src="assets/videos/SL_Dach_Funktion.mp4" type="video/mp4">
-                             <source src="assets/auto3/showcase.webm" type="video/webm">
                              Ihr Browser unterstützt das Video-Element nicht.
                             </video>
                             <figcaption>Dach in Action</figcaption>
@@ -201,7 +202,6 @@
                         <figure class="auto-asset">
                             <audio controls class="media-controls">
                              <source src="assets/sound/SLK_200_Soundcheck.mp3" type="audio/mpeg">
-                             <source src="assets/auto3/" type="audio/ogg">
                              Ihr Browser unterstützt das Audio-Element nicht.
                             </audio>
                             <figcaption>Sound</figcaption>
@@ -236,9 +236,9 @@
 
 
         <!-- Auto 3 Abschnitt -->
-        <section id="auto-3" class="auto-section" aria-labelledby="auto1-heading">
+        <section id="auto-3" class="auto-section">
             <div class="container">
-                <h2 id="auto1-heading">kompakter Roadster mit Fahrspaß - Mercedes SLK 280</h2>
+                <h2 id="auto3-heading">kompakter Roadster mit Fahrspaß - Mercedes SLK 280</h2>
                 <div class="auto-content">
                     <div class="auto-media">
                         <figure class="auto-asset">
@@ -254,18 +254,15 @@
                         <!-- TODO: Pfad zum Video des Autos 3 setzen: assets/auto3/showcase.mp4 -->
                         <figure class="auto-asset">
                             <video controls class="media-controls" width="600" height="338">
-                             <source src="assets/videos/SL_Dach_Funktion.mp4" type="video/mp4">
-                             <source src="assets/auto3/showcase.webm" type="video/webm">
+                             <source src="assets/videos/SLK280_Dachfunktion.mp4" type="video/mp4">
                              Ihr Browser unterstützt das Video-Element nicht.
                             </video>
                             <figcaption>Dach in Action</figcaption>
                         </figure>
                         
-                        <!-- TODO: Pfad zum Audio des Autos 3 setzen: assets/auto3/future-sound.mp3 -->
                         <figure class="auto-asset">
                             <audio controls class="media-controls">
-                             <source src="assets/sound/SL_Soundcheck.mp3" type="audio/mpeg">
-                             <source src="assets/auto3/" type="audio/ogg">
+                             <source src="assets/sound/SLK280_sound.mp3" type="audio/mp3">
                              Ihr Browser unterstützt das Audio-Element nicht.
                             </audio>
                             <figcaption>Sound</figcaption>
@@ -308,26 +305,25 @@
                <!-- Canvas-Bereich für Tacho -->
         <section id="telemetrie" class="canvas-section" aria-labelledby="canvas-heading">
             <div class="container">
-                <h2 id="canvas-heading">Live-Telemetrie Visualisierung</h2>
+                <h2 id="canvas-heading">So Beschleunigt der SL 500. Nicht schlecht für den Oldie!</h2>
                 <div class="canvas-container">
-                    <canvas id="telemetryCanvas" width="400" height="400" role="img" aria-label="Animierte Telemetrie-Anzeige mit Geschwindigkeitsmesser">
+                    <canvas id="telemetryCanvas" width="400" height="400" role="img">
                         Ihr Browser unterstützt das Canvas-Element nicht. Diese Animation zeigt eine stilisierte Geschwindigkeitsanzeige mit dynamischen Werten.
                     </canvas>
-                    <div class="canvas-description">
-                        <p>Die Telemetrie-Visualisierung zeigt in Echtzeit simulierte Fahrzeugdaten. Der animierte Tachometer demonstriert die dynamischen Leistungsdaten unserer Fahrzeuge - ein Beispiel für die fortschrittliche Bordcomputer-Technologie.</p>
-                    </div>
                 </div>
             </div>
         </section>
 
         <script src="app.js"></script>
 
+
+        
          <!-- Download-Bereich (Footer) -->
     <footer class="download-section" aria-label="Download-Bereich">
         <div class="container">
             <h2>Technische Dokumentation</h2>
-            <p>Laden Sie die vollständige technische Dokumentation aller Fahrzeuge als PDF herunter.</p>
-            <!-- TODO: href auf die finale PDF setzen, z. B. assets/dokumentation.pdf -->
+            <p>Krallen sie sich die Zusammenfassung... Es ist Kostenlos.</p>
+
             <a href="assets/Datenblatt_Mercedes.pdf" 
                download="Auto-Showcase-Dokumentation.pdf" 
                class="download-button"
