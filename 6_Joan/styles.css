@@ -1,0 +1,522 @@
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Farben */
+    --color-primary: #1a1a1a;
+    --color-secondary: #f0f0f0;
+    --color-accent: #c41e3a;
+    --color-background: #ffffff;
+    --color-surface: #fafafa;
+    --color-border: #e0e0e0;
+    --color-text: #212121;
+    --color-text-muted: #757575;
+    
+    /* Typografie - System Font Stack */
+    --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-size-base: 16px;
+    --font-size-small: 0.875rem;
+    --font-size-large: 1.125rem;
+    --line-height-base: 1.6;
+    --line-height-heading: 1.2;
+    
+    /* Spacing (8px-basiert) */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    --spacing-4xl: 6rem;
+    
+    /* Layout */
+    --container-max: 1200px;
+    --header-height: 50px;
+    
+    /* Transitions */
+    --transition-base: all 0.3s ease;
+}
+
+/* ============================================
+   Basis-Styles
+   ============================================ */
+
+html {
+    font-size: var(--font-size-base);
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-height) + var(--spacing-md));
+}
+
+body {
+    font-family: var(--font-system);
+    font-size: 1rem;
+    line-height: var(--line-height-base);
+    color: var(--color-text);
+    background-color: var(--color-background);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   Typografie - Fluid Sizing
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: var(--line-height-heading);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+h3 {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+}
+
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* ============================================
+   Container
+   ============================================ */
+
+.container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+/* ============================================
+   Header & Navigation (Sticky)
+   ============================================ */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+    z-index: 900;
+    transition: var(--transition-base);
+}
+
+.header-content {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.logo a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-xl);
+}
+
+.main-nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: var(--font-size-small);
+    font-weight: 500;
+    position: relative;
+    transition: var(--transition-base);
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-accent);
+    transition: var(--transition-base);
+}
+
+.main-nav a:hover::after,
+.main-nav a:focus::after,
+.main-nav a.active::after {
+    width: 100%;
+}
+
+/* ============================================
+   Hero Video Section
+   ============================================ */
+
+.hero-video-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--color-primary);
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.3) 0%,
+        rgba(0,0,0,0.1) 50%,
+        rgba(0,0,0,0.5) 100%
+    );
+    z-index: 1;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    color: var(--color-secondary);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-content h1 {
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero-content p {
+    font-size: var(--font-size-large);
+    opacity: 0.95;
+}
+
+/* Fallback für fehlende Video-Unterstützung */
+.hero-video-fallback {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-secondary);
+    font-size: var(--font-size-small);
+    text-align: center;
+    z-index: 1;
+}
+
+/* ============================================
+   Sprung-Navigation (Bild-Kachelraster)
+   ============================================ */
+
+.jump-navigation {
+    padding: var(--spacing-3xl) 0;
+    background: var(--color-surface);
+}
+
+.navigation-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+}
+
+.nav-card {
+    background: var(--color-background);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: var(--transition-base);
+}
+
+.nav-card:hover,
+.nav-card:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.nav-card__image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, #e0e0e0, #f5f5f5);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nav-card__content {
+    padding: var(--spacing-lg);
+}
+
+.nav-card__title {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.nav-card__description {
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-lg);
+}
+
+.nav-card__button {
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-xl);
+    background: var(--color-accent);
+    color: var(--color-secondary);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: var(--transition-base);
+}
+
+.nav-card__button:hover,
+.nav-card__button:focus {
+    background: #811628;
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* ============================================
+   Auto-Abschnitte
+   ============================================ */
+
+.auto-section {
+    padding: var(--spacing-4xl) 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.auto-section:nth-child(even) {
+    background: var(--color-surface);
+}
+
+.auto-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+}
+
+.auto-media {
+    display: grid;
+    gap: var(--spacing-xl);
+}
+
+.auto-asset {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.auto-asset img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.auto-asset figcaption {
+    padding: var(--spacing-md);
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    font-size: var(--font-size-small);
+}
+
+
+.media-controls {
+    width: 100%;
+    max-width: 100%;
+}
+
+.auto-info h3 {
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-accent);
+}
+
+.specs-list {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--spacing-sm) var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: var(--color-background);
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+}
+
+.specs-list dt {
+    font-weight: 600;
+    color: var(--color-text-muted);
+}
+
+.specs-list dd {
+    color: var(--color-text);
+}
+
+/* ============================================
+   Canvas-Bereich
+   ============================================ */
+
+.canvas-section {
+    padding: var(--spacing-4xl) 0;
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    color: var(--color-secondary);
+}
+
+.canvas-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xl);
+}
+
+#telemetryCanvas {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.canvas-description {
+    text-align: center;
+    max-width: 600px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ============================================
+   Download-Bereich (Footer)
+   ============================================ */
+
+.download-section {
+    padding: var(--spacing-3xl) 0;
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    text-align: center;
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-2xl);
+    background: var(--color-accent);
+    color: var(--color-secondary);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: var(--font-size-large);
+    font-weight: 600;
+    transition: var(--transition-base);
+    margin-top: var(--spacing-lg);
+}
+
+.download-button:hover,
+.download-button:focus {
+    background: #811628;
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* ============================================
+   Focus States
+   ============================================ */
+
+:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* ============================================
+   Responsive Design - Mobile First
+   ============================================ */
+
+@media (min-width: 768px) {
+    .navigation-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .auto-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .navigation-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .main-nav ul {
+        gap: var(--spacing-md);
+    }
+    
+    .hero-content h1 {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+    }
+}
+
+/* ============================================
+   Reduced Motion
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .hero-video {
+        display: none;
+    }
+    
+    .hero-video-fallback {
+        display: block;
+    }
+    
+    /* Canvas-Animation wird im JS gestoppt */
+}

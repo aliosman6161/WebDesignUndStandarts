@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-Showcase - Drei Premium-Fahrzeuge</title>
+    <meta name="description" content="Entdecken Sie unsere drei Premium-Fahrzeuge mit interaktiven Medien und Telemetrie-Visualisierung">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <!-- Sticky Header mit Navigation -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="#" aria-label="Zur Startseite">Mercedes Showcase</a>
+                </div>
+                <nav class="main-nav" aria-label="Hauptnavigation">
+                    <ul>
+                        <!-- als Liste -->
+                        <li><a href="#auto-1">Mercedes SL 500</a></li>
+                        <li><a href="#auto-2">Mercedes SLK 200</a></li>
+                        <li><a href="#auto-3">Mercedes SLK 280</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Video Section -->
+    <section class="hero-video-section" aria-label="Willkommensvideo">
+        <!-- TODO: Pfad zum Hero-Video setzen: assets/videos/hero-showreel.mp4 -->
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="assets/videos/SL500_Video.mp4" type="video/mp4">
+            <source src="assets/videos/hero-showreel.webm" type="video/webm">
+        </video>
+        <div class="hero-video-fallback">
+            <p>Video kann nicht abgespielt werden. Bitte nutzen Sie einen modernen Browser! :/</p>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Mercedes Showcase</h1>
+            <p>Entdecken Sie drei außergewöhnliche Fahrzeuge</p>
+        </div>
+    </section>
+    
+    <!-- Sprung-Navigation mit Bild-Kacheln -->
+    <section class="jump-navigation" aria-labelledby="nav-heading">
+        <div class="container">
+            <h2 id="nav-heading">Fahrzeuge</h2>
+            <div class="navigation-grid">
+                <article class="nav-card">
+                    <div class="nav-card__image">
+
+                        <img src="assets/pictures/SL_500.jpg" 
+                             alt="Bild eines Mercedes SL 500" 
+                             width="400" 
+                             height="225"
+                             loading="lazy">
+
+                    </div>
+                    <div class="nav-card__content">
+                        <h3 class="nav-card__title">Mercedes SL 500</h3>
+                        <p class="nav-card__description">Klassischer Oldie mit Spaßfaktor.</p>
+                        <a href="#auto-1" class="nav-card__button" aria-label="Mehr über das sportliche Coupé erfahren">Entdecken</a>
+                    </div>
+                </article>
+                
+                <article class="nav-card">
+                    <div class="nav-card__image">
+
+                        <img src="assets/pictures/SLK_200.jpg" 
+                             alt="Bild eines Mercedes SLK 200" 
+                             width="400" 
+                             height="225"
+                             loading="lazy">
+
+                    </div>
+                    <div class="nav-card__content">
+                        <h3 class="nav-card__title">Mercedes SLK 200</h3>
+                        <p class="nav-card__description">Sportlicher 2-Sitzer fürs Wochenende.</p>
+                        <a href="#auto-2" class="nav-card__button" aria-label="Mehr über die Luxus-Limousine erfahren">Entdecken</a>
+                    </div>
+                </article>
+                
+                <article class="nav-card">
+                    <div class="nav-card__image">
+
+                        <img src="assets/pictures/SLK_280.jpg" 
+                             alt="Mercedes SLK 280" 
+                             width="400" 
+                             height="225"
+                             loading="lazy">
+
+                    </div>
+                    <div class="nav-card__content">
+                        <h3 class="nav-card__title">Mercedes SLK 280</h3>
+                        <p class="nav-card__description">Kleiner Kurvenjäger für den Urlaub.</p>
+                        <a href="#auto-3" class="nav-card__button" aria-label="Mehr über den Elektro-SUV erfahren">Entdecken</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Hauptinhalt -->
+    <main id="main">
+        <!-- Auto 1 Abschnitt -->
+        <section id="auto-1" class="auto-section" aria-labelledby="auto1-heading">
+            <div class="container">
+                <h2 id="auto1-heading">Wunderschöner Oldie - Mercedes SL 500</h2>
+                <div class="auto-content">
+                    <div class="auto-media">
+                        <figure class="auto-asset">
+                            <!-- TODO: Pfad zum Hauptbild Auto 1 setzen: assets/auto1/main.jpg -->
+                            <img src="assets/pictures/mein_SL500.jpg" 
+                                 alt="Eigenes Bild des SL" 
+                                 width="600" 
+                                 height="300"
+                                 loading="lazy">
+                            <figcaption>zeitlose Eleganz trifft auf souveräne V8-Power.</figcaption>
+                        </figure>
+                        
+                        <!-- TODO: Pfad zum Video des Autos 3 setzen: assets/auto3/showcase.mp4 -->
+                        <figure class="auto-asset">
+                            <video controls class="media-controls" width="600" height="338">
+                             <source src="assets/videos/SL_Dach_Funktion.mp4" type="video/mp4">
+                             <source src="assets/auto3/showcase.webm" type="video/webm">
+                             Ihr Browser unterstützt das Video-Element nicht.
+                            </video>
+                            <figcaption>Dach in Action</figcaption>
+                        </figure>
+                        
+                        <!-- TODO: Pfad zum Audio des Autos 3 setzen: assets/auto3/future-sound.mp3 -->
+                        <figure class="auto-asset">
+                            <audio controls class="media-controls">
+                             <source src="assets/sound/SL_Soundcheck.mp3" type="audio/mpeg">
+                             <source src="assets/auto3/" type="audio/ogg">
+                             Ihr Browser unterstützt das Audio-Element nicht.
+                            </audio>
+                            <figcaption>Sound</figcaption>
+                        </figure>
+                    </div>
+                    
+                    <div class="auto-info">
+                        <h3>Technische Daten</h3>
+                        <dl class="specs-list">
+
+                            <dt>Motor</dt>
+                            <dd>M119</dd>
+
+                            <dt>Antrieb</dt>
+                            <dd>Heckantrieb</dd>
+                            
+                            <dt>Leistung</dt>
+                            <dd>240 kW (326 PS)</dd>
+                            
+                            <dt>0-100 km/h</dt>
+                            <dd>6,2 Sekunden</dd>
+                            
+                            <dt>Höchstgeschwindigkeit</dt>
+                            <dd>250 km/h</dd>
+
+                            <dt>Baujahr</dt>
+                            <dd>1992</dd>
+
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Auto 2 Abschnitt SLK200-->
+        <section id="auto-2" class="auto-section" aria-labelledby="auto2-heading">
+            <div class="container">
+                <h2 id="auto2-heading">Wochenend Cabrio - Mercedes SLK 200</h2>
+                <div class="auto-content">
+                    <div class="auto-media">
+                        <figure class="auto-asset">
+                            <!-- TODO: Pfad zum Hauptbild Auto 2 setzen: assets/auto2/main.jpg -->
+                            <img src="assets/pictures/mein_SLK200.jpg"
+                                 alt="Eigenes Bild des SLK 200" 
+                                 width="600" 
+                                 height="338"
+                                 loading="lazy">
+                            <figcaption>Roadster-Feeling pur mit Stern und Stil.</figcaption>
+                        </figure>
+                        
+                        <figure class="auto-asset">
+                            <video controls class="media-controls" width="600" height="338">
+                             <source src="assets/videos/SLK200_Dach.mp4" type="video/mp4">
+                             <source src="assets/auto3/showcase.webm" type="video/webm">
+                             Ihr Browser unterstützt das Video-Element nicht.
+                            </video>
+                            <figcaption>Dach in Action</figcaption>
+                        </figure>
+                        
+                        <!-- TODO: Pfad zum Audio des Autos 2 setzen: assets/auto2/ambient-sound.mp3 -->
+                        <figure class="auto-asset">
+                            <audio controls class="media-controls">
+                             <source src="assets/sound/SLK_200_Soundcheck.mp3" type="audio/mpeg">
+                             <source src="assets/auto3/" type="audio/ogg">
+                             Ihr Browser unterstützt das Audio-Element nicht.
+                            </audio>
+                            <figcaption>Sound</figcaption>
+                        </figure>
+                    </div>
+                    
+                    <div class="auto-info">
+                        <h3>Technische Daten</h3>
+                        <dl class="specs-list">
+                          <dt>Motor</dt>
+                            <dd>M111</dd>
+
+                            <dt>Antrieb</dt>
+                            <dd>Heckantrieb</dd>
+                            
+                            <dt>Leistung</dt>
+                            <dd>120 kW (163 PS)</dd>
+                            
+                            <dt>0-100 km/h</dt>
+                            <dd>8,6 Sekunden</dd>
+                            
+                            <dt>Höchstgeschwindigkeit</dt>
+                            <dd>221 km/h</dd>
+
+                            <dt>Baujahr</dt>
+                            <dd>2001</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Auto 3 Abschnitt -->
+        <section id="auto-3" class="auto-section" aria-labelledby="auto1-heading">
+            <div class="container">
+                <h2 id="auto1-heading">kompakter Roadster mit Fahrspaß - Mercedes SLK 280</h2>
+                <div class="auto-content">
+                    <div class="auto-media">
+                        <figure class="auto-asset">
+                            <!-- TODO: Pfad zum Hauptbild Auto 1 setzen: assets/auto1/main.jpg -->
+                            <img src="assets/pictures/mein_SLK280.jpg" 
+                                 alt="Eigenes Bild des SLK 280" 
+                                 width="600" 
+                                 height="300"
+                                 loading="lazy">
+                            <figcaption>SLK mit SLR Schnauze.</figcaption>
+                        </figure>
+                        
+                        <!-- TODO: Pfad zum Video des Autos 3 setzen: assets/auto3/showcase.mp4 -->
+                        <figure class="auto-asset">
+                            <video controls class="media-controls" width="600" height="338">
+                             <source src="assets/videos/SL_Dach_Funktion.mp4" type="video/mp4">
+                             <source src="assets/auto3/showcase.webm" type="video/webm">
+                             Ihr Browser unterstützt das Video-Element nicht.
+                            </video>
+                            <figcaption>Dach in Action</figcaption>
+                        </figure>
+                        
+                        <!-- TODO: Pfad zum Audio des Autos 3 setzen: assets/auto3/future-sound.mp3 -->
+                        <figure class="auto-asset">
+                            <audio controls class="media-controls">
+                             <source src="assets/sound/SL_Soundcheck.mp3" type="audio/mpeg">
+                             <source src="assets/auto3/" type="audio/ogg">
+                             Ihr Browser unterstützt das Audio-Element nicht.
+                            </audio>
+                            <figcaption>Sound</figcaption>
+                        </figure>
+                    </div>
+                    
+                    <div class="auto-info">
+                        <h3>Technische Daten</h3>
+                        <dl class="specs-list">
+
+                            <dt>Motor</dt>
+                            <dd>M119</dd>
+
+                            <dt>Antrieb</dt>
+                            <dd>Heckantrieb</dd>
+                            
+                            <dt>Leistung</dt>
+                            <dd>240 kW (326 PS)</dd>
+                            
+                            <dt>0-100 km/h</dt>
+                            <dd>6,2 Sekunden</dd>
+                            
+                            <dt>Höchstgeschwindigkeit</dt>
+                            <dd>250 km/h</dd>
+
+                            <dt>Baujahr</dt>
+                            <dd>1992</dd>
+
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+        
+       
+        
+
+               <!-- Canvas-Bereich für Tacho -->
+        <section id="telemetrie" class="canvas-section" aria-labelledby="canvas-heading">
+            <div class="container">
+                <h2 id="canvas-heading">Live-Telemetrie Visualisierung</h2>
+                <div class="canvas-container">
+                    <canvas id="telemetryCanvas" width="400" height="400" role="img" aria-label="Animierte Telemetrie-Anzeige mit Geschwindigkeitsmesser">
+                        Ihr Browser unterstützt das Canvas-Element nicht. Diese Animation zeigt eine stilisierte Geschwindigkeitsanzeige mit dynamischen Werten.
+                    </canvas>
+                    <div class="canvas-description">
+                        <p>Die Telemetrie-Visualisierung zeigt in Echtzeit simulierte Fahrzeugdaten. Der animierte Tachometer demonstriert die dynamischen Leistungsdaten unserer Fahrzeuge - ein Beispiel für die fortschrittliche Bordcomputer-Technologie.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="app.js"></script>
+
+         <!-- Download-Bereich (Footer) -->
+    <footer class="download-section" aria-label="Download-Bereich">
+        <div class="container">
+            <h2>Technische Dokumentation</h2>
+            <p>Laden Sie die vollständige technische Dokumentation aller Fahrzeuge als PDF herunter.</p>
+            <!-- TODO: href auf die finale PDF setzen, z. B. assets/dokumentation.pdf -->
+            <a href="assets/Datenblatt_Mercedes.pdf" 
+               download="Auto-Showcase-Dokumentation.pdf" 
+               class="download-button"
+               aria-label="PDF-Dokumentation herunterladen (2.3 MB)">
+                <span>📥</span>
+                <span>Dokumentation herunterladen</span>
+            </a>
+        </div>
+    </footer>
