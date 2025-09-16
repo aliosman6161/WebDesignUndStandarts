@@ -322,17 +322,14 @@ const races2025 = [
   function next() { idx = (idx + 1) % races2025.length; renderCard(idx); }
   
   document.addEventListener("DOMContentLoaded", function () {
-    // Kalender-Buttons
     document.querySelector(".nav.prev").addEventListener("click", prev);
     document.querySelector(".nav.next").addEventListener("click", next);
     renderCard(idx);
   
-    // Standings (Canvas + Reiter)
     initStandingsTabs();
   });
   
   
-  // === Standings-Daten (Beispiel) ===
 const driverStandings = [
   { name: "Oscar Piastri", points: 204 },
   { name: "Lando Norris", points: 198 },
@@ -354,18 +351,15 @@ const constructorStandings = [
   { name: "Aston Martin", points: 188 }
 ];
 
-// === Canvas-Zeichner (horizontaler Balken-Chart) ===
 function drawStandingsCanvas(data, mode = "drivers"){
   const canvas = document.getElementById("standingsCanvas");
   if (!canvas) return;
   const ctx = canvas.getContext("2d");
 
-  // Größe setzen (breit = Containerbreite, feste Höhe gut für Beamer)
   const wrap = canvas.parentElement;
   const w = Math.max(600, wrap.clientWidth);
   const h = 520;
 
-  // HiDPI-Schärfe
   const dpr = Math.max(1, window.devicePixelRatio || 1);
   canvas.width  = Math.round(w * dpr);
   canvas.height = Math.round(h * dpr);
@@ -373,14 +367,12 @@ function drawStandingsCanvas(data, mode = "drivers"){
   canvas.style.height = h + "px";
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-  // Chart-Layout
-  const padL = 56, padR = 24, padT = 40, padB = 90; // unten Platz für Labels
+  const padL = 56, padR = 24, padT = 40, padB = 90;
   const chartW = w - padL - padR;
   const chartH = h - padT - padB;
 
   ctx.clearRect(0, 0, w, h);
 
-  // Achsen
   ctx.strokeStyle = "rgba(255,255,255,.25)";
   ctx.lineWidth = 1;
   ctx.beginPath();
@@ -389,7 +381,6 @@ function drawStandingsCanvas(data, mode = "drivers"){
   ctx.lineTo(padL + chartW, padT + chartH);
   ctx.stroke();
 
-  // Gitter + Skala
   const maxPoints = Math.max(...data.map(d => d.points)) || 1;
   const steps = 4;
   ctx.font = "12px 'Open Sans', sans-serif";
@@ -407,7 +398,6 @@ function drawStandingsCanvas(data, mode = "drivers"){
     ctx.fillText(String(val), padL - 8, y);
   }
 
-  // Säulen
   const n = data.length;
   const gap = 12;
   const colW = Math.max(18, (chartW - gap * (n - 1)) / n);
@@ -419,34 +409,30 @@ function drawStandingsCanvas(data, mode = "drivers"){
     const hVal = (d.points / maxPoints) * chartH;
     const y = padT + chartH - hVal;
 
-    // Säule
     ctx.fillStyle = "#d90429";
     ctx.fillRect(x, y, colW, hVal);
 
-    // Wert über der Säule
     ctx.fillStyle = "#FFFFFF";
     ctx.font = "12px 'Open Sans', sans-serif";
     ctx.textBaseline = "bottom";
     ctx.fillText(String(d.points), x + colW / 2, y - 6);
 
-    // Label unter der Säule
     ctx.save();
     ctx.translate(x + colW / 2, padT + chartH + 8);
-    ctx.rotate(-Math.PI / 6); // ~ -30°
+    ctx.rotate(-Math.PI / 6);
     ctx.fillStyle = "#CBD5E1";
     ctx.textBaseline = "top";
     ctx.font = "12px 'Open Sans', sans-serif";
 
     const labelText = (mode === "constructors")
-      ? d.name                                  // Teams: voller Name (z. B. "Aston Martin")
-      : d.name.split(" ").slice(-1)[0];         // Fahrer: Nachname (z. B. "Leclerc")
+      ? d.name
+      : d.name.split(" ").slice(-1)[0];
 
     ctx.fillText(labelText, 0, 0);
     ctx.restore();
   });
 }
 
-// === Tabs initialisieren (Fahrer / Teams) ===
 function initStandingsTabs(){
   let view = "drivers";
   let data = driverStandings;
@@ -457,7 +443,7 @@ function initStandingsTabs(){
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
       buttons.forEach(b => b.classList.toggle("is-active", b === btn));
-      view = btn.dataset.view;  // "drivers" oder "constructors"
+      view = btn.dataset.view;
       data = (view === "drivers") ? driverStandings : constructorStandings;
       redraw();
     });
