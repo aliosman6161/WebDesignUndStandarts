@@ -1,0 +1,176 @@
+/* Grundlayout */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: "Didot", "Times New Roman", serif;
+  color: black;
+  background: white;
+}
+
+/* Hero-Bereich */
+.hero {
+  position: relative;
+  height: 100vh; /* Video füllt Bildschirmhöhe */
+  overflow: hidden;
+}
+.video-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* hinter Header/Text */
+}
+
+/* Header über Video */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: rgba(0,0,0,0.5); /* halbtransparent */
+  backdrop-filter: blur(3px);
+  position: relative;
+  z-index: 10;
+}
+.nav-list {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: flex;
+  gap: 20px;
+}
+.nav-list a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.nav-list a:hover {
+  text-decoration: underline;
+}
+.brand-svg {
+  width: 80px;
+  height: auto;
+  fill: #f5f5f5;
+  stroke: #f5f5f5;
+}
+
+/* Text im Hero (mit „embossed“ Schatten) */
+.hero-text {
+  position:absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  z-index: 5;
+}
+.hero-text h1,
+.hero-text p {
+  text-shadow:
+    1px 4px 2px rgba(0,0,0,0.8),     /* dunkler Schatten unten rechts */
+   -1px -1px 1px rgba(255,255,255,0.4); /* heller Kontrast oben links */
+}
+.hero-text h1 { font-size: 3rem; margin: 0; }
+.hero-text p  { font-size: 2rem;  }
+
+.design-title {
+  font-size: 5rem;
+  text-align: center;
+  padding: 30px 20px 10px;
+  margin: 0 auto;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Design-Grid: 3 gleich große Spalten */
+.section.design-grid {
+  max-width: none;
+  display: grid;
+  grid-template-columns: repeat(3,1fr); /* 3 Spalten */
+  gap: 10px;
+  width: 100%;
+  margin-top: 10px;
+  align-items: stretch; /* gleiche Höhe */
+}
+
+/* Jedes Item füllt die Spalte */
+.design-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Inhalt verteilt */
+  align-items: center;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  height: 100%; /* gleiche Höhe erzwingen */
+}
+/* Bild im Item */
+.design-item img {
+  max-width: 100%;
+  aspect-ratio: 16 / 9; /* Seitenverhältnis */
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* Audio Player volle Breite */
+.design-item audio {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.verbrauch-canvas {
+  display: block;
+  margin: 10px auto;
+  background: #fff;
+  border: 1px solid #ccc;
+  max-width: 100%;   /* skaliert bei schmalen Screens */
+  height: auto;      /* Seitenverhältnis bleibt */
+}
+
+
+/* Canvas zentrieren */
+#verbrauchCanvas {
+  display: block;
+  margin: 0 auto 10px;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+/* Normale Abschnitte */
+.section {
+  padding: 10px 10px;
+  max-width: 1200px;
+  text-align: center;
+}
+.muted { color: #666; }
+
+#galerie.section {
+  max-width: none;        /* überschreibt .section */
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* 2) Grid breiter + weiterhin 3 Spalten */
+.galerie-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 36px);
+  width: min(96vw, 1800px);   /* HIER größer machen (z.B. 1800–2000px) */
+  margin: 30px auto 30px;
+  padding: 0 24px;            /* optionaler Rand links/rechts */
+}
+
+/* 3) Bilder füllen die Spalte – Höhe kannst du mit aspect-ratio steuern */
+.galerie-grid img {
+  width: 100%;
+  aspect-ratio: 16 / 9;       /* für mehr Höhe z.B. 3/2 oder 4/3 wählen */
+  object-fit: cover;
+}
+
+/* Footer */
+.site-footer {
+  background: #eee;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+}
