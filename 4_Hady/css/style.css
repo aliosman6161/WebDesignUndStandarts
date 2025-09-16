@@ -2,9 +2,6 @@
    Leitfarben & Design-Tokens
    =========================== */
 :root{
-  /* Brand / Leitfarben */
-  --color-primary: #0c1f2c;     /* Midnight Blue */
-
   /* Text & Flächen */
   --color-bg: #ffffff;
   --color-surface: #ffffff;     /* Karten/Hintergründe */
