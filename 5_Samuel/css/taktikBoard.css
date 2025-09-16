@@ -1,51 +1,53 @@
 .taktik-board {
-    display: grid;
-    grid-template-columns: 20% 30% 50%;
-    width: 100%;
-    box-sizing: border-box;
+    display: grid; /* verwendet CSS Grid für Layout */
+    grid-template-columns: 20% 30% 50%; /* drei Spalten mit relativen Breiten */
+    width: 100%; /* Container nimmt volle Breite ein */
+    box-sizing: border-box; /* Padding und Border werden in die Gesamtbreite einbezogen */
     gap: 10px; /* optional: Abstand zwischen Spalten */
-    align-items: start; /* wichtig! */
+    align-items: start; /* richtet Inhalte am oberen Rand der Zellen aus */
 }
 
 .left, .middle, .right {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-    justify-content: flex-start;
-    height: 90vh;
+    display: flex; /* verwendet Flexbox für vertikale Anordnung */
+    flex-direction: column; /* Elemente werden untereinander gestapelt */
+    align-content: center; /* zentriert Inhalt innerhalb der Flex-Zeile (wirkt bei mehreren Zeilen) */
+    align-items: center; /* zentriert einzelne Elemente horizontal */
+    justify-content: flex-start; /* Elemente beginnen oben im Container */
+    height: 90vh; /* Höhe beträgt 90% der sichtbaren Fensterhöhe */
 }
+
 .drawing-area {
-    background-image: url('../assets/TaktikBoard.jpg');
-    background-size:cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-image: url('../assets/TaktikBoard.jpg'); /* Hintergrundbild für das Spielfeld */
+    background-size: cover; /* Bild wird skaliert, um den Container vollständig zu füllen */
+    background-position: center; /* Bild wird zentriert angezeigt */
+    background-repeat: no-repeat; /* Bild wird nicht wiederholt */
     position: relative; /* wichtig! damit Canvas absolut darin liegt */
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-    overflow: hidden; /* damit nichts raussteht */
+    width: 100%; /* volle Breite des Containers */
+    height: 100%; /* volle Höhe des Containers */
+    border-radius: 15px; /* abgerundete Ecken */
+    overflow: hidden; /* damit nichts über die Grenzen hinausragt */
 }
 
 #taktikBoardCanvas {
-    display: block;
-    position: absolute; 
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border-radius: 15px;
+    display: block; /* verhindert unerwünschten Leerraum bei Inline-Elementen */
+    position: absolute; /* positioniert das Canvas relativ zum drawing-area Container */
+    width: 100%; /* Canvas füllt die gesamte Breite */
+    height: 100%; /* Canvas füllt die gesamte Höhe */
+    top: 0; /* beginnt ganz oben im Container */
+    left: 0; /* beginnt ganz links im Container */
+    border-radius: 15px; /* abgerundete Ecken passend zum Container */
 }
 
 .legende {
-    font-size: large;
-    width: 93%;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 10px;
+    font-size: large; /* größere Schrift für bessere Lesbarkeit */
+    width: 93%; /* etwas schmaler als volle Breite für optischen Rand */
+    height: fit-content; /* Höhe passt sich dem Inhalt an */
+    display: flex; /* verwendet Flexbox für vertikale Anordnung */
+    flex-direction: column; /* Elemente werden untereinander gestapelt */
+    padding-bottom: 10px; /* Abstand nach unten für visuelle Trennung */
 }
+
 li {
-    padding: 10px;
-    padding-top: 0px;
+    padding: 10px; /* Innenabstand rund um Listenelemente */
+    padding-top: 0px; /* kein zusätzlicher Abstand oben */
 }

@@ -1,97 +1,102 @@
-let currentColor = '#000000';
-let isDrawing = false;
-let lineWidth = 3;
-let isEraser = false;
+let currentColor = '#000000'; // Standardfarbe für den Stift (Schwarz)
+let isDrawing = false;        // Status, ob gerade gezeichnet wird
+let lineWidth = 3;            // Standard-Linienstärke
+let isEraser = false;         // Status, ob Radierer aktiv ist
 
-const canvas = document.getElementById('taktikBoardCanvas');
-const container = document.querySelector('.drawing-area');
-const ctx = canvas.getContext('2d');
+const canvas = document.getElementById('taktikBoardCanvas'); // Zeichenfläche
+const container = document.querySelector('.drawing-area');   // Container für Größenanpassung
+const ctx = canvas.getContext('2d');                         // Zeichenkontext für 2D-Zeichnung
 
-// Farbauswahl wie vorher
-const swatches = document.querySelectorAll('.color-swatch');
+// Farbauswahl vorbereiten
+const swatches = document.querySelectorAll('.color-swatch'); // Alle Farbfelder
 swatches.forEach(swatch => {
     swatch.addEventListener('click', () => {
-        // alle deaktivieren
+        // Alle Farbfelder deaktivieren
         swatches.forEach(s => s.classList.remove('active'));
-        // nur den geklickten aktiv machen
+        // Geklicktes Farbfeld aktivieren
         swatch.classList.add('active');
-        // Farbe übernehmen
+        // Farbe aus dem data-color Attribut übernehmen
         currentColor = swatch.dataset.color;
-        isEraser = false;
-        updateToolUI();
+        isEraser = false; // Stift aktivieren
+        updateToolUI();   // UI aktualisieren
     });
 });
 
-swatches[0].classList.add('active');
+swatches[0].classList.add('active'); // Erste Farbe standardmäßig aktiv
 
-// Werkzeug-Schalter
-const penTool = document.getElementById('penTool');
-const eraserTool = document.getElementById('eraserTool');
+// Werkzeug-Schalter vorbereiten
+const penTool = document.getElementById('penTool');       // Stift-Button
+const eraserTool = document.getElementById('eraserTool'); // Radierer-Button
 
 penTool.addEventListener('click', () => {
-    isEraser = false;
-    updateToolUI();
+    isEraser = false; // Stift aktivieren
+    updateToolUI();   // UI aktualisieren
 });
 
 eraserTool.addEventListener('click', () => {
-    isEraser = true;
-    updateToolUI();
+    isEraser = true;  // Radierer aktivieren
+    updateToolUI();   // UI aktualisieren
 });
 
+// UI-Status für Werkzeug-Schalter aktualisieren
 function updateToolUI() {
-    penTool.classList.toggle('active', !isEraser);
-    eraserTool.classList.toggle('active', isEraser);
+    penTool.classList.toggle('active', !isEraser);     // Stift aktiv, wenn Radierer aus
+    eraserTool.classList.toggle('active', isEraser);   // Radierer aktiv, wenn isEraser true
 }
 
-// Linienstärke
+// Linienstärke über Slider anpassen
 const slider = document.getElementById('lineWidthSlider');
 slider.addEventListener('input', (e) => {
-    lineWidth = parseInt(e.target.value);
+    lineWidth = parseInt(e.target.value); // neuen Wert übernehmen
 });
 
-// Zeichnen
+// Zeichenvorgang starten
 canvas.addEventListener('mousedown', (e) => {
     const elementUnderMouse = document.elementFromPoint(e.clientX, e.clientY);
-    if (elementUnderMouse.classList.contains('placed-object')) return;
-    isDrawing = true;
-    ctx.beginPath();
-    ctx.moveTo(getX(e), getY(e));
+    if (elementUnderMouse.classList.contains('placed-object')) return; // nicht auf Icons zeichnen
+    isDrawing = true; // Zeichnen aktivieren
+    ctx.beginPath();  // neuen Pfad starten
+    ctx.moveTo(getX(e), getY(e)); // Startpunkt setzen
 });
 
+// Zeichenvorgang fortsetzen bei Mausbewegung
 canvas.addEventListener('mousemove', (e) => {
-    if (!isDrawing) return;
+    if (!isDrawing) return; // nur wenn Zeichnen aktiv ist
 
-    ctx.lineWidth = lineWidth;
-    ctx.lineCap = 'round';
+    ctx.lineWidth = lineWidth; // Linienstärke setzen
+    ctx.lineCap = 'round';     // Linienenden abrunden
 
-if (isEraser) {
-    ctx.globalCompositeOperation = 'destination-out'; // "löschen"
-    ctx.strokeStyle = 'rgba(0,0,0,1)'; // Farbe egal, Hauptsache opaque
-} else {
-    ctx.globalCompositeOperation = 'source-over'; // "normal malen"
-    ctx.strokeStyle = currentColor;
-}
+    if (isEraser) {
+        ctx.globalCompositeOperation = 'destination-out'; // löscht statt zu zeichnen
+        ctx.strokeStyle = 'rgba(0,0,0,1)'; // Farbe egal, Hauptsache deckend
+    } else {
+        ctx.globalCompositeOperation = 'source-over'; // normal zeichnen
+        ctx.strokeStyle = currentColor; // aktuelle Farbe verwenden
+    }
 
-ctx.lineTo(getX(e), getY(e));
-ctx.stroke();
-
+    ctx.lineTo(getX(e), getY(e)); // Linie zum aktuellen Punkt
+    ctx.stroke(); // Linie zeichnen
 });
 
+// Zeichenvorgang beenden bei Maus loslassen
 canvas.addEventListener('mouseup', () => {
     isDrawing = false;
 });
+
+// Zeichenvorgang beenden, wenn Maus das Canvas verlässt
 canvas.addEventListener('mouseleave', () => {
     isDrawing = false;
 });
 
-// Canvas-Größe dynamisch setzen
+// Canvas-Größe dynamisch an Container anpassen
 function resizeCanvas() {
-    canvas.width = container.clientWidth;;
-    canvas.height = container.clientHeight;
+    canvas.width = container.clientWidth;  // Breite anpassen
+    canvas.height = container.clientHeight; // Höhe anpassen
 }
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
+window.addEventListener('resize', resizeCanvas); // bei Fenstergröße ändern
+resizeCanvas(); // initiale Anpassung
 
+// Hilfsfunktionen zur Mausposition relativ zum Canvas
 function getX(e) {
     const rect = canvas.getBoundingClientRect();
     return e.clientX - rect.left;
@@ -101,9 +106,8 @@ function getY(e) {
     return e.clientY - rect.top;
 }
 
-// Delete-Button
+// Button zum Löschen des gesamten Canvas-Inhalts
 const resetCanvasBtn = document.getElementById('delete');
 resetCanvasBtn.addEventListener('click', () => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // alles löschen
 });
-

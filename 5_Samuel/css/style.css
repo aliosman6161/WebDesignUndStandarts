@@ -1,94 +1,94 @@
 html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;          /* wichtig für % Höhe */
-    min-height: 100%;
-    font-family: Arial, sans-serif, Helvetica;
-    text-shadow: 4px 4px 6px #000000;
-    line-height: 1.5;
-    font-size: large;
-    color: #ffffff;
+    margin: 0; /* Entfernt Standardabstand um das Dokument */
+    padding: 0; /* Entfernt Innenabstand des Body */
+    height: 100%;          /* Ermöglicht die Nutzung von 100% Höhe für Kind-Elemente */
+    min-height: 100%; /* Stellt sicher, dass die Seite mindestens die volle Höhe des Viewports hat */
+    font-family: Arial, sans-serif, Helvetica; /* Schriftarten in Prioritätsreihenfolge */
+    text-shadow: 4px 4px 6px #000000; /* Schatteneffekt für Text, sorgt für bessere Lesbarkeit */
+    line-height: 1.5; /* Zeilenhöhe für bessere Lesbarkeit */
+    font-size: large; /* Standard-Schriftgröße */
+    color: #ffffff; /* Textfarbe: Weiß */
 }
 
 .page {
-    backdrop-filter: blur(10px);
-    min-width: 100%;
-    min-height: 100%;       /* wächst mit Inhalt */
+    backdrop-filter: blur(10px); /* Weichzeichner-Effekt für Hintergrundinhalte */
+    min-width: 100%; /* Seite soll mindestens so breit sein wie der Viewport */
+    min-height: 100%;       /* Seite wächst mit dem Inhalt, bleibt aber mindestens Viewport-Höhe */
 }
-
 
 body {
     background-image: 
-      radial-gradient(circle, transparent 10%, rgba(0,0,0,0.9) 100%),
-      url('../assets/VolleyballBG.jpg');
-    background-color: black;
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+      radial-gradient(circle, transparent 10%, rgba(0,0,0,0.9) 100%), /* dunkler radialer Verlauf für Lesbarkeit */
+      url('../assets/VolleyballBG.jpg'); /* Hintergrundbild */
+    background-color: black; /* Fallback-Hintergrundfarbe */
+    background-size: cover; /* Bild wird skaliert, um den gesamten Hintergrund zu füllen */
+    background-repeat: no-repeat; /* Bild wird nicht wiederholt */
+    background-position: center; /* Bild wird zentriert angezeigt */
+    background-attachment: fixed; /* Hintergrund bleibt beim Scrollen fixiert */
 }
 
 .navbar {
-    background: rgba(0,0,0,0.7); /* halbtransparentes Weiß */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* leichter Rahmen */
-    border-radius:60px; /* abgerundet links und rechts */
-    backdrop-filter: blur(10px); /* milchiger Effekt */
-    position: fixed; z-index: 1;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 20px;
-    width: fit-content;
-    padding: 20px;
-    text-align: center;
+    background: rgba(0,0,0,0.7); /* halbtransparenter schwarzer Hintergrund */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* leichter weißer Rahmen mit Transparenz */
+    border-radius: 60px; /* starke Abrundung der Ecken */
+    backdrop-filter: blur(10px); /* milchiger Effekt hinter der Navbar */
+    position: fixed; z-index: 1; /* Navbar bleibt oben fixiert, z-index sorgt für Sichtbarkeit */
+    top: 20px; /* Abstand vom oberen Rand */
+    left: 50%; /* horizontale Positionierung in der Mitte */
+    transform: translateX(-50%); /* zentriert die Navbar exakt */
+    height: 20px; /* feste Höhe der Navbar */
+    width: fit-content; /* Breite passt sich dem Inhalt an */
+    padding: 20px; /* Innenabstand für mehr Platz */
+    text-align: center; /* zentriert den Text innerhalb der Navbar */
 }
 
 /* Beispiel Navigation Links */
 .navbar a {
-    color: white;
-    text-decoration: none;
-    margin: 15px;
-    font-size: 18px;
-    position: relative;
-    border-radius: 8px;
-    padding: 10px;
+    color: white; /* Linkfarbe: Weiß */
+    text-decoration: none; /* entfernt Unterstreichung */
+    margin: 15px; /* Abstand zwischen den Links */
+    font-size: 18px; /* Schriftgröße der Links */
+    position: relative; /* notwendig für das ::after-Pseudo-Element */
+    border-radius: 8px; /* leichte Abrundung der Linkflächen */
+    padding: 10px; /* Innenabstand für Klickfläche */
 }
+
 .navbar a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    width: 0;
-    height: 2px;
-    background-color: white;
-    transition: width 0.3s ease;
+    content: ""; /* erzeugt ein leeres Pseudo-Element für die Unterlinie */
+    position: absolute; /* absolute Positionierung relativ zum Link */
+    left: 0; /* Startpunkt der Linie ganz links */
+    bottom: -1px; /* leicht unterhalb des Textes */
+    width: 0; /* initial keine Breite → unsichtbar */
+    height: 2px; /* Höhe der Linie */
+    background-color: white; /* Farbe der Linie */
+    transition: width 0.3s ease; /* sanfte Animation beim Hover */
 }
 
 /* Unterlinie beim Hover */
 .navbar a:hover::after {
-    width: 100%;
+    width: 100%; /* Linie wird beim Hover vollständig sichtbar */
 }
 
 /* aktive Unterlinie standardmäßig */
 .navbar a.active::after {
-    width: 100%;
+    width: 100%; /* Linie ist bei aktivem Link dauerhaft sichtbar */
 }
 
 /* Unterlinie vom aktiven Link ausblenden, wenn ein anderer Link gehovt wird */
 .navbar:hover a.active::after {
-    width: 0;
+    width: 0; /* aktive Linie wird temporär ausgeblendet, wenn ein anderer Link gehovt wird */
 }
 
 .content {
-    position:relative;
-    top: 70px; /* Abstand zur Sidebar */
-    bottom: 50px; /* Abstand zum unteren Rand */
-    left: 0;
-    width: 100%;
-    max-width:96%;
-    padding: 20px;
-    box-sizing: border-box; /* Seite bleibt in eienr Größe inder sie sich nicht nach links oder recht schiebt*/
-    margin-left: 2%;
-    margin-right: 2%;
-    color: white;
+    position: relative; /* ermöglicht Positionierung relativ zum normalen Dokumentfluss */
+    top: 70px; /* Abstand zur fixierten Navbar oben */
+    bottom: 50px; /* Abstand zum unteren Rand (optional, hat bei relative keine direkte Wirkung) */
+    left: 0; /* Startpunkt ganz links */
+    width: 100%; /* volle Breite */
+    max-width: 96%; /* maximale Breite, um etwas Rand zu lassen */
+    padding: 20px; /* Innenabstand für Inhalt */
+    box-sizing: border-box; /* Padding wird in die Gesamtbreite einberechnet */
+    margin-left: 2%; /* linker Außenabstand */
+    margin-right: 2%; /* rechter Außenabstand */
+    color: white; /* Textfarbe: Weiß */
 }

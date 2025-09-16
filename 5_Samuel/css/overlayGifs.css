@@ -1,55 +1,55 @@
 /* Overlay standardmäßig unsichtbar */
 .overlay {        /* mindestens so hoch wie der Container */
-    background: rgba(0,0,0,0.8);
-    z-index: 2;
-    position: fixed;        /* fixiert an der Viewport-Kante */
-    top: 0;
-    left: 0;
-    width: 100%;           /* volle Breite */
-    height: 100%;          /* volle Höhe */
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background: rgba(0,0,0,0.8); /* dunkler halbtransparenter Hintergrund */
+    z-index: 2; /* liegt über anderen Elementen */
+    position: fixed;        /* fixiert an der Viewport-Kante, unabhängig vom Scrollen */
+    top: 0; /* beginnt ganz oben */
+    left: 0; /* beginnt ganz links */
+    width: 100%;           /* volle Breite des Viewports */
+    height: 100%;          /* volle Höhe des Viewports */
+    display: none; /* Overlay ist zunächst unsichtbar */
+    flex-direction: column; /* Inhalte werden vertikal gestapelt */
+    justify-content: center; /* zentriert Inhalte vertikal */
+    align-items: center; /* zentriert Inhalte horizontal */
 }
 
 body.no-scroll {
     overflow: hidden;         /* verhindert Scrollen der Seite, wenn Overlay aktiv ist */
 }
 
-
 /* Nur wenn sichtbar */
 .overlay.active {
-    display: flex;
+    display: flex; /* zeigt das Overlay als Flexbox */
 }
 
 .overlay .gif-container {
-    display: flex;
-    gap: 20px;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
+    display: flex; /* Flexbox für GIF-Anordnung */
+    gap: 20px; /* Abstand zwischen den GIFs */
+    flex-wrap: nowrap; /* verhindert Zeilenumbruch */
+    justify-content: center; /* zentriert GIFs horizontal */
+    align-items: center; /* zentriert GIFs vertikal */
 }
 
 .overlay img {
-    max-width: 70%;
-    max-height: 80%;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    max-width: 70%; /* begrenzt die Breite des Bildes relativ zum Viewport */
+    max-height: 80%; /* begrenzt die Höhe des Bildes relativ zum Viewport */
+    border-radius: 10px; /* abgerundete Ecken für das Bild */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5); /* Schatten für Tiefe und Kontrast */
 }
 
 .overlay button.close-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: #ffffff; /* halbtransparentes Weiß */
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 6px;
-    font-size: 16px;
+    position: absolute; /* frei positioniert innerhalb des Overlays */
+    top: 20px; /* Abstand vom oberen Rand */
+    right: 20px; /* Abstand vom rechten Rand */
+    background: #ffffff; /* weißer Hintergrund */
+    border: none; /* kein Rahmen */
+    padding: 10px 15px; /* Innenabstand für Klickfläche */
+    cursor: pointer; /* zeigt Hand-Cursor beim Hover */
+    border-radius: 6px; /* abgerundete Ecken für den Button */
+    font-size: 16px; /* Schriftgröße */
 }
+
 .overlay button.close-btn:hover {
- transform: scale(1.05);
- background: #fdd116;
+    transform: scale(1.05); /* vergrößert den Button leicht beim Hover */
+    background: #fdd116; /* gelber Hintergrund beim Hover für visuelles Feedback */
 }
