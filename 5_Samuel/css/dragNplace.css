@@ -1,58 +1,57 @@
 .objects {
-    background: rgba(255, 255, 255, 0.3); /* halbtransparentes Weiß */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* leichter Rahmen */
-    backdrop-filter: blur(10px); /* milchiger Effekt */
-    border-radius: 15px;
-    width: 95%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    overflow-y: auto; /* falls viele Icons */
-    margin-bottom: 10px;;
+    background: rgba(255, 255, 255, 0.3); /* halbtransparentes Weiß für leichten Glaseffekt */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* dezenter weißer Rahmen */
+    backdrop-filter: blur(10px); /* milchiger Unschärfeeffekt hinter dem Container */
+    border-radius: 15px; /* abgerundete Ecken für weiches Design */
+    width: 95%; /* Container nimmt 95% der verfügbaren Breite ein */
+    display: flex; /* Flexbox für vertikale Anordnung der Inhalte */
+    flex-direction: column; /* Elemente werden untereinander gestapelt */
+    align-items: center; /* zentriert die Inhalte horizontal */
+    padding-top: 10px; /* Abstand oben im Container */
+    padding-bottom: 10px; /* Abstand unten im Container */
+    overflow-y: auto; /* ermöglicht vertikales Scrollen bei vielen Icons */
+    margin-bottom: 10px;; /* Abstand nach unten zum nächsten Element (doppeltes Semikolon ist redundant) */
 }
 
-.objects-raster{
-    border-radius: 15px;
-    box-sizing: border-box;
-    display:grid;
-    grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
-    place-items: center;
-    max-height: 100%;
+.objects-raster {
+    border-radius: 15px; /* abgerundete Ecken für das Raster */
+    box-sizing: border-box; /* Padding und Border werden in die Gesamtgröße einbezogen */
+    display: grid; /* verwendet CSS Grid für die Anordnung der Icons */
+    grid-template-columns: repeat(auto-fill, minmax(45px, 1fr)); /* flexible Spaltenanzahl mit Mindestbreite */
+    place-items: center; /* zentriert Inhalte horizontal und vertikal in jeder Zelle */
+    max-height: 100%; /* maximale Höhe begrenzt auf 100% des Elternelements */
 }
 
 .draggable {
-    width: 45px;
-    height: 45px;
-    padding: 5px;
-    cursor: grab;
+    width: 45px; /* feste Breite für jedes Icon */
+    height: 45px; /* feste Höhe für jedes Icon */
+    padding: 5px; /* Innenabstand rund um das Icon */
+    cursor: grab; /* zeigt Greifhand-Cursor beim Hover für Drag-and-Drop */
 }
 
 .placed-object {
-    position: absolute;
-    width: 45px;
-    height: 45px;
-    cursor: grab;
-    user-select: none;
+    position: absolute; /* ermöglicht freie Positionierung im Container */
+    width: 45px; /* feste Breite */
+    height: 45px; /* feste Höhe */
+    cursor: grab; /* Greifhand-Cursor für manuelles Verschieben */
 }
 
 #resetButton {
-    margin-top: auto; /* Schiebt den Button ganz nach unten */
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.3); /* halbtransparentes Weiß */
+    margin-top: auto; /* schiebt den Button ganz nach unten innerhalb eines flex-Containers */
+    padding: 10px 20px; /* Innenabstand oben/unten und links/rechts */
+    border: none; /* entfernt Standardrahmen */
+    border-radius: 10px; /* abgerundete Ecken für den Button */
+    background: rgba(255, 255, 255, 0.3); /* halbtransparenter Hintergrund */
     border: 1px solid rgba(255, 255, 255, 0.2); /* leichter Rahmen */
-    backdrop-filter: blur(10px); /* milchiger Effekt */
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    width: 80%;
-    max-width: 150px;
+    backdrop-filter: blur(10px); /* milchiger Effekt hinter dem Button */
+    color: white; /* weiße Schriftfarbe */
+    font-weight: bold; /* fette Schrift für bessere Lesbarkeit */
+    cursor: pointer; /* zeigt Hand-Cursor beim Hover */
+    width: 80%; /* Button nimmt 80% der Containerbreite ein */
+    max-width: 150px; /* maximale Breite des Buttons */
 }
 
 #resetButton:hover {
-    transform: scale(1.1);
-    background-color: #cf0000;
+    transform: scale(1.1); /* vergrößert den Button leicht beim Hover */
+    background-color: #cf0000; /* roter Hintergrund beim Hover für visuelles Feedback */
 }

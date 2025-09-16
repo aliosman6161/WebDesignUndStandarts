@@ -1,28 +1,28 @@
-.angriff, .annahme, .zuspiel, .block{
-    display: grid;
-    grid-template-columns: auto auto;
+.angriff, .annahme, .zuspiel, .block {
+    display: grid; /* verwendet CSS Grid für die Layoutstruktur */
+    grid-template-columns: auto auto; /* zwei Spalten mit automatischer Breite */
 }
 
-.technik-img{
-    border-radius: 15px;
-    margin-left: 20px;
-    margin-top: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+.technik-img {
+    border-radius: 15px; /* abgerundete Ecken für das Bild */
+    margin-left: 20px; /* Abstand links vom Bild */
+    margin-top: 15px; /* Abstand oberhalb des Bildes */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Schatteneffekt für Tiefe und Kontrast */
 }
 
-.angriff-video, .annahme-Beispiele, .zuspiel-Beispiele, .block-Beispiele{
-    display: grid;
-    grid-template-columns: auto auto;
-    margin-top: 10px;
-    place-items: center;
+.angriff-video, .annahme-Beispiele, .zuspiel-Beispiele, .block-Beispiele {
+    display: grid; /* verwendet CSS Grid für die Anordnung der Inhalte */
+    grid-template-columns: auto auto; /* zwei Spalten mit automatischer Breite */
+    margin-top: 10px; /* Abstand oberhalb der Sektion */
+    place-items: center; /* zentriert Inhalte horizontal und vertikal in jeder Grid-Zelle */
 }
 
-.beschreinbung-angriff{
-    text-align: center;
+.beschreinbung-angriff {
+    text-align: center; /* zentriert den Text horizontal */
 }
 
-.video-technik, .beispiel-img{
-    border-radius: 15px;
-    margin:20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+.video-technik, .beispiel-img {
+    border-radius: 15px; /* abgerundete Ecken für Videos und Beispielbilder */
+    margin: 20px; /* gleichmäßiger Abstand rund um das Element */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Schatteneffekt für visuelle Tiefe */
 }

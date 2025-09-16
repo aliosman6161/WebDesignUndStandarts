@@ -1,74 +1,73 @@
-
 .container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative; /* ermöglicht absolute Positionierung von Kind-Elementen */
+  width: 100%; /* Container nimmt volle Breite ein */
+  height: 100vh; /* Container nimmt volle Höhe des Viewports ein */
+  display: flex; /* verwendet Flexbox für Zentrierung */
+  justify-content: center; /* zentriert Inhalt horizontal */
+  align-items: center; /* zentriert Inhalt vertikal */
 }
 
 .center-text {
-  position: absolute;
-  text-align: center;
-  max-width: 600px;
-  z-index: 10;
+  position: absolute; /* positioniert den Text unabhängig vom normalen Fluss */
+  text-align: center; /* zentriert den Text horizontal */
+  max-width: 600px; /* begrenzt die maximale Breite des Textblocks */
+  z-index: 10; /* sorgt dafür, dass der Text über anderen Elementen liegt */
 }
 
 .center-text h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 3rem; /* große Überschrift */
+  margin-bottom: 1rem; /* Abstand unterhalb der Überschrift */
 }
 
 .center-text p {
-  font-size: 1.2rem;
+  font-size: 1.2rem; /* etwas größere Schrift für den Absatz */
 }
 
 /* Kreis-Container */
 .rechteck {
-  border-radius: 15px;
-  position: absolute;
-  background-color: #f00; /* Fallback, falls Bild fehlt */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  border-radius: 15px; /* abgerundete Ecken für weiches Design */
+  position: absolute; /* freie Positionierung innerhalb des übergeordneten Containers */
+  background-color: #f00; /* Fallback-Farbe, falls das Bild nicht geladen wird */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Schatten für Tiefe und Kontrast */
   /* Hintergrundbild Einstellungen */
-  background-size: cover;      /* gesamtes Bild wird sichtbar, ohne Beschnitt */
-  background-position: center;   /* Bild bleibt zentriert */
-  background-repeat: no-repeat;  /* kein wiederholen */
+  background-size: cover; /* Bild wird skaliert, um den Container vollständig zu füllen */
+  background-position: center; /* Bild wird zentriert angezeigt */
+  background-repeat: no-repeat; /* Bild wird nicht wiederholt */
 }
 
 /* Verschiedene Größen und Positionen */
-.rechteck1 { width: 190px; height: 130px; top: 18%; left: 5%; background-image: url('../assets/HomeGalerie/volleyballPic1.jpg');}
-.rechteck2 { width: 220px; height: 150px; top: 20%; right: 10%; background-image: url('../assets/HomeGalerie/volleyballPic2.jpg');}
-.rechteck3 { width: 270px; height: 140px; bottom: 18%; left: 8%; background-image: url('../assets/HomeGalerie/volleyballPic3.jpg');}
-.rechteck4 { width: 200px; height: 160px; bottom: 7%; right: 12%; background-image: url('../assets/HomeGalerie/volleyballPic4.jpg');}
-.rechteck5 { width: 170px; height: 130px; top: 15%; left: 40%; background-image: url('../assets/HomeGalerie/volleyballPic5.jpeg');}
-.rechteck6 { width: 230px; height: 150px; bottom: 10%; right: 35%; background-image: url('../assets/HomeGalerie/volleyballPic6.jpg');}
-.rechteck7 { width: 190px; height: 140px; top: 18%; left: 57%; background-image: url('../assets/HomeGalerie/volleyballPic7.jpg');}
-.rechteck8 { width: 210px; height: 160px; bottom: 7%; left: 30%; background-image: url('../assets/HomeGalerie/volleyballPic8.jpeg');}
-.rechteck9 { width: 180px; height: 130px; top: 12%; left: 23%; background-image: url('../assets/HomeGalerie/volleyballPic9.jpg');}
-.rechteck10 { width: 200px; height: 150px; bottom: 40%; left: 12%; background-image: url('../assets/HomeGalerie/volleyballPic10.jpeg');}
-.rechteck11 { width: 260px; height: 180px; bottom: 34%; right: 7%; background-image: url('../assets/HomeGalerie/volleyballPic11.jpeg');}
+.rechteck1 { width: 190px; height: 130px; top: 18%; left: 5%; background-image: url('../assets/HomeGalerie/volleyballPic1.jpg'); }
+.rechteck2 { width: 220px; height: 150px; top: 20%; right: 10%; background-image: url('../assets/HomeGalerie/volleyballPic2.jpg'); }
+.rechteck3 { width: 270px; height: 140px; bottom: 18%; left: 8%; background-image: url('../assets/HomeGalerie/volleyballPic3.jpg'); }
+.rechteck4 { width: 200px; height: 160px; bottom: 7%; right: 12%; background-image: url('../assets/HomeGalerie/volleyballPic4.jpg'); }
+.rechteck5 { width: 170px; height: 130px; top: 15%; left: 40%; background-image: url('../assets/HomeGalerie/volleyballPic5.jpeg'); }
+.rechteck6 { width: 230px; height: 150px; bottom: 10%; right: 35%; background-image: url('../assets/HomeGalerie/volleyballPic6.jpg'); }
+.rechteck7 { width: 190px; height: 140px; top: 18%; left: 57%; background-image: url('../assets/HomeGalerie/volleyballPic7.jpg'); }
+.rechteck8 { width: 210px; height: 160px; bottom: 7%; left: 30%; background-image: url('../assets/HomeGalerie/volleyballPic8.jpeg'); }
+.rechteck9 { width: 180px; height: 130px; top: 12%; left: 23%; background-image: url('../assets/HomeGalerie/volleyballPic9.jpg'); }
+.rechteck10 { width: 200px; height: 150px; bottom: 40%; left: 12%; background-image: url('../assets/HomeGalerie/volleyballPic10.jpeg'); }
+.rechteck11 { width: 260px; height: 180px; bottom: 34%; right: 7%; background-image: url('../assets/HomeGalerie/volleyballPic11.jpeg'); }
 
 .pdf-download {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
+  position: absolute; /* positioniert den Downloadbereich unabhängig vom normalen Fluss */
+  bottom: 20px; /* Abstand vom unteren Rand */
+  left: 20px; /* Abstand vom linken Rand */
 }
 
 .download-button {
-    background: rgba(255, 255, 255, 0.3); /* halbtransparentes Weiß */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* leichter Rahmen */
-    backdrop-filter: blur(10px); /* milchiger Effekt */
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 10px;
-    border: none;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: bold;
+  background: rgba(255, 255, 255, 0.3); /* halbtransparenter Hintergrund für Glaseffekt */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* dezenter Rahmen */
+  backdrop-filter: blur(10px); /* milchiger Effekt hinter dem Button */
+  padding: 10px 15px; /* Innenabstand oben/unten und links/rechts */
+  cursor: pointer; /* zeigt Hand-Cursor beim Hover */
+  border-radius: 10px; /* abgerundete Ecken für den Button */
+  border: none; /* entfernt Standardrahmen */
+  color: #ffffff; /* weiße Schriftfarbe */
+  font-size: 16px; /* Schriftgröße */
+  font-weight: bold; /* fette Schrift für bessere Lesbarkeit */
 }
 
 .download-button:hover {
-    transform: scale(1.05);
-    background: #fdd116;
+  transform: scale(1.05); /* vergrößert den Button leicht beim Hover */
+  background: #fdd116; /* gelber Hintergrund beim Hover für visuelles Feedback */
 }
