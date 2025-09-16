@@ -1,13 +1,48 @@
-/* Grundlayout */
+/* ===========================
+   Leitfarben & Design-Tokens
+   =========================== */
+:root{
+  /* Brand / Leitfarben */
+  --color-primary: #0c1f2c;     /* Midnight Blue */
+
+  /* Text & Flächen */
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;     /* Karten/Hintergründe */
+  --color-surface-2: #f5f7fa;   /* alternative Fläche */
+  --color-text: #000000;
+
+  /* Linkfarben */
+  --color-link: #ffffff;        /* im Header */
+  --color-link-hover: #e5e7eb;
+
+  /* Transparenzen & Schatten */
+  --header-bg-opacity: 0.55;
+  --shadow-rgb: 0,0,0;
+  --shadow-1: 0 4px 10px rgba(var(--shadow-rgb), .30);
+
+  /* Typografie */
+  --font-family: "Didot", "Times New Roman", serif;
+
+  /* Abstände (konsistent nutzbar) */
+  --space-1: 10px;
+  --space-2: 20px;
+  --space-3: 30px;
+}
+
+/* ===========================
+   Grundlayout / Reset
+   =========================== */
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body {
-  font-family: "Didot", "Times New Roman", serif;
-  color: black;
-  background: white;
+  font-family: var(--font-family);
+  color: var(--color-text);
+  background: var(--color-bg);
 }
 
-/* Hero-Bereich */
+/* ===========================
+   Hero-Bereich
+   =========================== */
 .hero {
   position: relative;
   height: 100vh; /* Video füllt Bildschirmhöhe */
@@ -22,13 +57,16 @@ body {
   z-index: -1; /* hinter Header/Text */
 }
 
-/* Header über Video */
+/* ===========================
+   Header über Video
+   =========================== */
 .site-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  background: rgba(0,0,0,0.5); /* halbtransparent */
+  background: rgba(12, 31, 44, var(--header-bg-opacity)); /* var(--color-primary) mit Opazität */
+  -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   position: relative;
   z-index: 10;
@@ -40,12 +78,13 @@ body {
   gap: 20px;
 }
 .nav-list a {
-  color: white;
+  color: var(--color-link);
   text-decoration: none;
   font-weight: bold;
 }
 .nav-list a:hover {
   text-decoration: underline;
+  color: var(--color-link-hover);
 }
 .brand-svg {
   width: 80px;
@@ -54,14 +93,16 @@ body {
   stroke: #f5f5f5;
 }
 
-/* Text im Hero (mit „embossed“ Schatten) */
+/* ===========================
+   Text im Hero
+   =========================== */
 .hero-text {
   position:absolute;
   bottom: 20%;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  color: white;
+  color: #ffffff;
   z-index: 5;
 }
 .hero-text h1,
@@ -73,38 +114,54 @@ body {
 .hero-text h1 { font-size: 3rem; margin: 0; }
 .hero-text p  { font-size: 2rem;  }
 
+/* ===========================
+   Titel
+   =========================== */
 .design-title {
   font-size: 5rem;
   text-align: center;
   padding: 30px 20px 10px;
   margin: 0 auto;
   font-weight: bold;
-  color: #333;
+  color: #000000;
 }
 
-/* Design-Grid: 3 gleich große Spalten */
+/* ===========================
+   Sections / generische Abstände
+   =========================== */
+.section {
+  padding: var(--space-1) var(--space-1);
+  max-width: 1200px;
+  text-align: center;
+  margin: 0 auto;
+}
+.muted { color: var(--color-text-muted); }
+
+/* ===========================
+   Showroom: 3-Spalten-Grid
+   =========================== */
 .section.design-grid {
   max-width: none;
   display: grid;
-  grid-template-columns: repeat(3,1fr); /* 3 Spalten */
+  grid-template-columns: repeat(3,1fr);
   gap: 10px;
   width: 100%;
   margin-top: 10px;
-  align-items: stretch; /* gleiche Höhe */
+  align-items: stretch;
 }
 
-/* Jedes Item füllt die Spalte */
+/* Karten / Items */
 .design-item {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Inhalt verteilt */
+  justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background: #ffffff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  height: 100%; /* gleiche Höhe erzwingen */
+  padding: var(--space-2);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-1);
+  height: 100%;
+  border-radius: 6px;
 }
-/* Bild im Item */
 .design-item img {
   max-width: 100%;
   height: auto; /* Seitenverhältnis */
@@ -118,59 +175,62 @@ body {
   margin-top: 10px;
 }
 
-.verbrauch-canvas {
+/* ===========================
+   Canvas
+   =========================== */
+.verbrauch-canvas,
+#verbrauchCanvas {
   display: block;
   margin: 10px auto;
   background: #fff;
-  border: 1px solid #ccc;
-  max-width: 100%;   /* skaliert bei schmalen Screens */
-  height: auto;      /* Seitenverhältnis bleibt */
+  border: 1px solid var(--color-secondary);
+  max-width: 100%;
+  height: auto;
 }
 
-
-/* Canvas zentrieren */
-#verbrauchCanvas {
-  display: block;
-  margin: 0 auto 10px;
-  background: #fff;
-  border: 1px solid #ccc;
-}
-
-/* Normale Abschnitte */
-.section {
-  padding: 10px 10px;
-  max-width: 1200px;
-  text-align: center;
-}
-.muted { color: #666; }
-
+/* ===========================
+   Galerie (breiter als Standard-Section)
+   =========================== */
 #galerie.section {
   max-width: none;        /* überschreibt .section */
   padding-left: 0;
   padding-right: 0;
 }
 
-/* 2) Grid breiter + weiterhin 3 Spalten */
+/* Grid breiter + weiterhin 3 Spalten */
 .galerie-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(16px, 2vw, 36px);
-  width: min(96vw, 1800px);   /* HIER größer machen (z.B. 1800–2000px) */
+  width: min(96vw, 1800px);
   margin: 30px auto 30px;
-  padding: 0 24px;            /* optionaler Rand links/rechts */
+  padding: 0 24px;
 }
-
-/* 3) Bilder füllen die Spalte – Höhe kannst du mit aspect-ratio steuern */
 .galerie-grid img {
   width: 100%;
-  aspect-ratio: 16 / 9;       /* für mehr Höhe z.B. 3/2 oder 4/3 wählen */
-  object-fit: cover;
+  height: 300px;      /* oder clamp(220px, 20vw, 360px) */
+  object-fit: cover;  /* beschneiden, zentriert */
+  object-position: center;
+  display: block;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.3);
 }
 
-/* Footer */
+/* ===========================
+   Footer
+   =========================== */
 .site-footer {
-  background: #eee;
+  background: var(--color-surface-2);
   text-align: center;
   padding: 15px;
   font-size: 14px;
+  color: var(--color-text);
 }
+
+/* ===========================
+   Utility-Klassen (optional)
+   =========================== */
+.text-primary { color: var(--color-primary); }
+.bg-primary   { background: var(--color-primary); color:#fff; }
+.text-accent  { color: var(--color-accent); }
+.border-secondary { border-color: var(--color-secondary); }
