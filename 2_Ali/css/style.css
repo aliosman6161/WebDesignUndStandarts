@@ -406,6 +406,7 @@ html, body {
 }
 
 .zero_to_hundred-bike-time-cbr1000rr {
+  margin-top: 200px;
   grid-area: 4 / 2 / 5 / 3;
   display: flex;
   justify-content: center;
@@ -413,6 +414,7 @@ html, body {
 }
 
 .zero_to_hundred-bike-time-cbr500r {
+  margin-top: 200px;
   grid-area: 4 / 4 / 5 / 5;
   display: flex;
   justify-content: center;
@@ -598,7 +600,7 @@ a:visited {
 
   /* Factsheet */
   .factsheet-bike-name {
-    font-size: var(--font-xxxl);
+    font-size: 13rem;
   }
   .factsheet-specs {
     gap: 100px;
@@ -653,7 +655,7 @@ a:visited {
     gap: 120px;
   }
   .gallery-image {
-    width: 400px;
+    width: 300px;
   }
 
   /* Description on left */
