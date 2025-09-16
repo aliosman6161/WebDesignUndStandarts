@@ -3,7 +3,7 @@ html, body {
     padding: 0;
     height: 100%;          /* wichtig für % Höhe */
     min-height: 100%;
-    font-family: Arial;
+    font-family: Arial, sans-serif, Helvetica;
     text-shadow: 4px 4px 6px #000000;
     line-height: 1.5;
     font-size: large;
