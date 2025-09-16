@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1-World</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Racing+Sans+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="hero">
+        <video class="bg-video" autoplay muted loop playsinline preload="metadata">
+            <source src="assets/media/F1Edit.mp4" type="video/mp4">
+        </video>
+        <div class="scrim"></div>
+
+        <h1>F1 - WORLD</h1>
+        <p class="keywords">Schnell • Präzise • Unaufhaltsam • Furchtlos</p>
+    </header>
+    
+    <section id="calendar" class="calendar">
+        <h2>F1 Rennkalender 2025</h2>
+        <div class="race-carousel">
+          <button class="nav prev" aria-label="Zurück">‹</button>
+          <div class="race-card" id="race-card"></div>
+          <button class="nav next" aria-label="Weiter">›</button>
+        </div>
+      </section>
+
+    <section id="standings" class="standings">
+    <h2 class="section-title">WM-Stand 2025</h2>
+    
+    <div class="standings-toolbar" role="tablist" aria-label="Standings Ansicht">
+        <button class="std-btn is-active" role="tab" aria-selected="true" data-view="drivers">Fahrer</button>
+        <button class="std-btn" role="tab" aria-selected="false" data-view="constructors">Teams</button>
+    </div>
+    
+    <figure class="chart-wrap">
+        <canvas id="standingsCanvas"></canvas>
+    </figure>
+    </section>      
+
+    <section id="sound" class="sound-compare">
+        <h2 class="section-title">Soundvergleich</h2>
+        <p class="desc">
+            Das Rennen beginnt im Ohr - Der kreischende V10 der 2000er trifft auf den modernen V6-Hybrid der heutigen Formel&nbsp;1.
+        </p>
+
+        <div class="sound-grid">
+          <article class="sound-card">
+            <h3>Alte F1-Autos</h3>
+            <audio controls preload="metadata">
+              <source src="assets/media/F1Auto_Alt.mp3" type="audio/mp3">
+              Dein Browser unterstützt das Audio-Element nicht.
+            </audio>
+          </article>
+      
+          <article class="sound-card">
+            <h3>Neue F1-Autos</h3>
+            <audio controls preload="metadata">
+              <source src="assets/media/F1Auto_Neu.mp3" type="audio/mp3">
+              Dein Browser unterstützt das Audio-Element nicht.
+            </audio>
+          </article>
+        </div>
+    </section>
+                        
+  
+
+<section id="media" class="media">
+  <h2 class="section-title">Galerie</h2>
+
+  <div class="media-grid" aria-label="Bild- und Videogalerie">
+    <figure class="media-card">
+      <img
+        src="assets/img/F1_Corner.jpg"
+        alt="Bild 1"
+        width="920" height="518"
+        loading="lazy" decoding="async">
+      <figcaption>Bild 1</figcaption>
+    </figure>
+
+    <figure class="media-card">
+      <video
+        width="920" height="518"
+        controls preload="metadata" playsinline>
+        <source src="assets/media/F1_Vid.mp4" type="video/mp4">
+        Dein Browser unterstützt das Video-Element nicht.
+      </video>
+      <figcaption>Video</figcaption>
+    </figure>
+
+    <figure class="media-card">
+      <img
+        src="assets/img/F1_Car.jpg"
+        alt="Bild 2"
+        width="920" height="518"
+        loading="lazy" decoding="async">
+      <figcaption>Bild 2</figcaption>
+    </figure>
+  </div>
+</section>
+
+  <script src="js/app.js" defer></script>
+  <div class="site-logo">
+  <img src="assets/img/Logo.svg" alt="F1-World Logo" width="42" height="42">
+</div>
+
+</body>
+</html>
